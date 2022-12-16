@@ -1,0 +1,347 @@
+C:\Users\ngangamarca\source\repos\parqueo\bin\parqueo.dll.config
+C:\Users\ngangamarca\source\repos\parqueo\bin\parqueo.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\parqueo.pdb
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\csc.exe
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\csc.exe.config
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\csc.rsp
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\csi.exe
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\csi.exe.config
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\csi.rsp
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.AppContext.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Console.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.IO.Compression.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Net.Http.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Net.Sockets.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.ValueTuple.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\vbc.exe
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\vbc.exe.config
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\vbc.rsp
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\VBCSCompiler.exe
+C:\Users\ngangamarca\source\repos\parqueo\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ngangamarca\source\repos\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ngangamarca\source\repos\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ngangamarca\source\repos\parqueo\obj\Debug\parqueo.csproj.AssemblyReference.cache
+C:\Users\ngangamarca\source\repos\parqueo\obj\Debug\parqueo.csproj.CoreCompileInputs.cache
+C:\Users\ngangamarca\source\repos\parqueo\obj\Debug\parqueo.csproj.CopyComplete
+C:\Users\ngangamarca\source\repos\parqueo\obj\Debug\parqueo.dll
+C:\Users\ngangamarca\source\repos\parqueo\obj\Debug\parqueo.pdb
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\parqueo.dll.config
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\parqueo.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\parqueo.pdb
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\csc.exe
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\csc.exe.config
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\csc.rsp
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\csi.exe
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\csi.exe.config
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\csi.rsp
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.AppContext.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Console.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.IO.Compression.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Net.Http.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Net.Sockets.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.ValueTuple.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Xml.XPath.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\vbc.exe
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\vbc.exe.config
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\vbc.rsp
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\VBCSCompiler.exe
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SUPERTRONICA\Downloads\parqueo\obj\Debug\parqueo.csproj.CoreCompileInputs.cache
+C:\Users\SUPERTRONICA\Downloads\parqueo\obj\Debug\parqueo.csproj.CopyComplete
+C:\Users\SUPERTRONICA\Downloads\parqueo\obj\Debug\parqueo.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\obj\Debug\parqueo.pdb
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\MySql.Data.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\Google.Protobuf.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\ZstdNet.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\K4os.Compression.LZ4.Streams.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\BouncyCastle.Crypto.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\Ubiety.Dns.Core.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\System.Memory.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\System.Buffers.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\K4os.Compression.LZ4.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\K4os.Hash.xxHash.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\MySql.Data.xml
+C:\Users\SUPERTRONICA\Downloads\parqueo\bin\System.Numerics.Vectors.dll
+C:\Users\SUPERTRONICA\Downloads\parqueo\obj\Debug\parqueo.csproj.AssemblyReference.cache
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\parqueo.dll.config
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\parqueo.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\parqueo.pdb
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\csc.exe
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\csc.exe.config
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\csc.rsp
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\csi.exe
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\csi.exe.config
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\csi.rsp
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.AppContext.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Collections.Immutable.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Console.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Globalization.Calendars.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.IO.Compression.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.IO.FileSystem.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Net.Http.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Net.Sockets.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Reflection.Metadata.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.ValueTuple.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Xml.XPath.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\vbc.exe
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\vbc.exe.config
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\vbc.rsp
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\VBCSCompiler.exe
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\roslyn\VBCSCompiler.exe.config
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\MySql.Data.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\Google.Protobuf.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\ZstdNet.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\K4os.Compression.LZ4.Streams.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\BouncyCastle.Crypto.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\Ubiety.Dns.Core.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\System.Memory.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\System.Buffers.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\K4os.Compression.LZ4.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\K4os.Hash.xxHash.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\System.Numerics.Vectors.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\MySql.Data.xml
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\obj\Debug\parqueo.csproj.AssemblyReference.cache
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\obj\Debug\parqueo.csproj.CoreCompileInputs.cache
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\obj\Debug\parqueo.csproj.CopyComplete
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\obj\Debug\parqueo.dll
+D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\parqueo\obj\Debug\parqueo.pdb
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\obj\Debug\parqueo.csproj.AssemblyReference.cache
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\obj\Debug\parqueo.csproj.CoreCompileInputs.cache
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\obj\Debug\parqueo.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\obj\Debug\parqueo.pdb
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\parqueo.dll.config
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\parqueo.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\parqueo.pdb
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\csc.exe
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\csc.exe.config
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\csc.rsp
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\csi.exe
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\csi.exe.config
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\csi.rsp
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.AppContext.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Console.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.IO.Compression.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Net.Http.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.ValueTuple.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\vbc.exe
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\vbc.exe.config
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\vbc.rsp
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\VBCSCompiler.exe
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\MySql.Data.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\Google.Protobuf.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\ZstdNet.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\K4os.Compression.LZ4.Streams.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\BouncyCastle.Crypto.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\Ubiety.Dns.Core.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\System.Memory.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\System.Buffers.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\K4os.Compression.LZ4.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\K4os.Hash.xxHash.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\System.Numerics.Vectors.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\MySql.Data.xml
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Marco\Desktop\UNIVESRIDAD\S5\BDD2\proyecto enci\parqueo\obj\Debug\parqueo.csproj.CopyComplete
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\parqueo.dll.config
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\parqueo.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\parqueo.pdb
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\csc.exe
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\csc.exe.config
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\csc.rsp
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\csi.exe
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\csi.exe.config
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\csi.rsp
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.AppContext.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Console.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.IO.Compression.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Net.Http.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Net.Sockets.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.ValueTuple.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Xml.XPath.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\vbc.exe
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\vbc.exe.config
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\vbc.rsp
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\VBCSCompiler.exe
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\MySql.Data.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\Google.Protobuf.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\ZstdNet.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\K4os.Compression.LZ4.Streams.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\BouncyCastle.Crypto.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\Ubiety.Dns.Core.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\System.Memory.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\System.Buffers.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\K4os.Compression.LZ4.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\K4os.Hash.xxHash.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\System.Numerics.Vectors.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\MySql.Data.xml
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\obj\Debug\parqueo.csproj.AssemblyReference.cache
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\obj\Debug\parqueo.csproj.CoreCompileInputs.cache
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\obj\Debug\parqueo.csproj.CopyComplete
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\obj\Debug\parqueo.dll
+C:\Users\SUPERTRONICA\OneDrive\Documentos\Proyecto ENCI\parqueo\obj\Debug\parqueo.pdb
