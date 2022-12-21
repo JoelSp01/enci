@@ -28,7 +28,7 @@
                 <li class="nav-item"><a class="nav-link text-dark" href="Compras.aspx">Compras</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="pedido.aspx">Pedidos</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="factura.aspx">Ordenes</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte de Gastos</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte</a></li>
             </ul>
         </nav>
         <section>

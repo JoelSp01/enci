@@ -15,13 +15,13 @@ namespace parqueo
     {
 
         /// <summary>
-        /// Control formProveedor.
+        /// Control formCompras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formProveedor;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formCompras;
 
         /// <summary>
         /// Control cerrarSesion.

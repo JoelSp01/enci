@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="estilosProveedor.css" />
 </head>
 <body class="bg bg-image" style="background-image: url('images/blanco.jpg');">
-    <form id="formProveedor" runat="server">
+    <form id="formCompras" runat="server">
         <header>
             <div class="p-3" style="display: inline-block; width: 85%;">
                 <h2>PUCE| Ibarra</h2>
@@ -36,7 +36,7 @@
                 <li class="nav-item"><a class="nav-link active text-dark" href="Compras.aspx">Compras</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="pedido.aspx">Pedidos</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="factura.aspx">Ordenes</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="">Reporte de Gastos</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte</a></li>
                 
             </ul>
         </nav>
@@ -50,31 +50,30 @@
                     <div style="margin-left: 5%; display: inline-block; width: 40%; float: left;">
                         <label class="form-label">Proveedor</label>
                         <asp:DropDownList ID="listProveedor" style="padding-inline: 4%;" class="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="listProveedor_SelectedIndexChanged">
-                        </asp:DropDownList><br />
+                        </asp:DropDownList>
                         <label class="form-label">RUC</label>
-                        <asp:TextBox ID="txtRuc" style="width: 100%" class="form-control" runat="server" Enabled="False"></asp:TextBox><br />
+                        <asp:TextBox ID="txtRuc" style="width: 100%" class="form-control" runat="server" Enabled="False"></asp:TextBox>
                         <label class="form-label">AUT</label>
-                        <asp:TextBox ID="txtAut" type="number" class="form-control" runat="server"></asp:TextBox><br />
+                        <asp:TextBox ID="txtAut" type="number" class="form-control" runat="server"></asp:TextBox>
                         <label class="form-label">Detalle</label>
-                        <asp:TextBox ID="txtDetalle" class="form-control" runat="server"></asp:TextBox><br />
+                        <asp:TextBox ID="txtDetalle" class="form-control" runat="server"></asp:TextBox>
                         <label class="form-label">Caracteristica</label>
                         <asp:DropDownList ID="listClasificacion" style="padding-inline: 4%;" class="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="listClasificacion_SelectedIndexChanged">
-                        </asp:DropDownList><br />
+                        </asp:DropDownList>
                     </div>
                     <div style=" margin-left: 5%; display: inline-block; width:40%; float: left;">
                         <label class="form-label">Cantidad</label>
-                        <asp:TextBox ID="txtCantidad" type="number" class="form-control" runat="server" AutoPostBack="True" OnTextChanged="calcularSubTotal"></asp:TextBox><br />
+                        <asp:TextBox ID="txtCantidad" type="number" class="form-control" runat="server" AutoPostBack="True" OnTextChanged="calcularSubTotal"></asp:TextBox>
                         <label class="form-label">C/Unitario</label>
-                        <asp:TextBox ID="txtCostoUnidad" type="number" class="form-control" runat="server" OnTextChanged="calcularSubTotal" AutoPostBack="True"></asp:TextBox><br />
+                        <asp:TextBox ID="txtCostoUnidad" type="number" class="form-control" runat="server" OnTextChanged="calcularSubTotal" AutoPostBack="True"></asp:TextBox>
                         <label class="form-label">C/Total</label>
-                        <asp:TextBox ID="txtSubtotal" type="number" class="form-control" style="width: 100%" runat="server" AutoPostBack="True" Enabled="False"></asp:TextBox><br />
+                        <asp:TextBox ID="txtSubtotal" type="number" class="form-control" style="width: 100%" runat="server" AutoPostBack="True" Enabled="False"></asp:TextBox>
                         <label class="form-label">IVA</label> 
                         <asp:DropDownList ID="listIva" runat="server" style="padding-inline: 4%;" class="form-control" AutoPostBack="True" OnSelectedIndexChanged="listIva_SelectedIndexChanged">
                         </asp:DropDownList>
-                        <br/>
                     
                         <label class="form-label">Total</label>
-                        <asp:TextBox ID="txtTotal"  class="form-control" style="width: 100%" runat="server" Enabled="False"></asp:TextBox><br />
+                        <asp:TextBox ID="txtTotal"  class="form-control" style="width: 100%" runat="server" Enabled="False"></asp:TextBox><br /><br />
                     </div>
                     <asp:Button ID="btnIngresarMaterial" runat="server" Text="Confirmar" class="form-control btn btn-secondary border rounded-pill" OnClick="btnIngresarMaterial_Click" /><br />
                 </asp:Panel>

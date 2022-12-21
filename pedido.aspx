@@ -28,7 +28,7 @@
                 <li class="nav-item"><a class="nav-link text-dark" href="Compras.aspx">Compras</a></li>
                 <li class="nav-item"><a class="nav-link active text-dark" href="pedido.aspx">Pedidos</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="factura.aspx">Ordenes</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="">Reporte de Gastos</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte de Gastos</a></li>
                 
             </ul>
         </nav>
@@ -67,8 +67,12 @@
             <asp:Panel ID="PanelMaterial" style="width: 30%; display: inline-block; float:left;" Visible="false" runat="server">
                 <div style="margin-left: 5%; display: inline-block; width: 40%; float: left;">
                     <label>Material</label>
-                    <asp:DropDownList ID="lstMaterial" class="form-control" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="lstMaterial" class="form-control" runat="server"></asp:DropDownList><br />
+                    <asp:Button ID="btnAgMat" runat="server" class="form-control btn btn-secondary border rounded-pill" Text="Añadir" />
                 </div>
+            </asp:Panel>
+            <asp:Panel ID="PanelGridMaterial" runat="server">
+                <asp:GridView ID="GridMaterial" runat="server"></asp:GridView>
             </asp:Panel>
         </section>
     </form>
