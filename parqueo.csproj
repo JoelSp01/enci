@@ -79,7 +79,7 @@
     <Content Include="Web.config" />
     <Content Include="IncioSesion.aspx" />
     <Content Include="pruebaxd.aspx" />
-    <Content Include="Materiales.aspx" />
+    <Content Include="Compras.aspx" />
     <Content Include="pedido.aspx" />
     <Content Include="menu.aspx" />
     <Content Include="factura.aspx" />
@@ -106,12 +106,12 @@
     <Compile Include="pruebaxd.aspx.designer.cs">
       <DependentUpon>pruebaxd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Materiales.aspx.cs">
-      <DependentUpon>Materiales.aspx</DependentUpon>
+    <Compile Include="Compras.aspx.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Materiales.aspx.designer.cs">
-      <DependentUpon>Materiales.aspx</DependentUpon>
+    <Compile Include="Compras.aspx.designer.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
     </Compile>
     <Compile Include="pedido.aspx.cs">
       <DependentUpon>pedido.aspx</DependentUpon>

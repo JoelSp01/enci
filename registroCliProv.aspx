@@ -25,7 +25,7 @@
             <ul class="nav nav-tabs justify-content-center">
                 <li class="nav-item"><a class="nav-link text-dark" href="menu.aspx">Home</a></li>
                 <li class="nav-item"><a class="nav-link active text-dark" href="registroCliProv.aspx">Registrar</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="Materiales.aspx">Material</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Compras.aspx">Compras</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="pedido.aspx">Pedidos</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="factura.aspx">Ordenes</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte de Gastos</a></li>
@@ -41,27 +41,26 @@
                     <h5><b>Registrar Cliente</b><asp:Label ID="lblIdCliente" runat="server" Visible="False"></asp:Label>
                     </h5>
                     <div>
-                        <b>
-                            <label class="form-label">Nombre</label></b>
+                        <b><label class="form-label">Nombre</label></b>
                         <asp:TextBox ID="txtCliNombre" runat="server" class="form-control" placeholder="Escriba su nombre"></asp:TextBox>
                         <asp:Label ID="lblErrorNombre" runat="server" Font-Bold="True" ForeColor="Red" Text="Ingrese el nombre" Visible="False"></asp:Label>
                         <br />
 
-                        <b>
-                            <label class="form-label">C.I</label></b>
+                        <b><label class="form-label">C.I</label></b>
                         <asp:TextBox ID="txtCliCedula" runat="server" class="form-control" placeholder="Documento de Identidad"></asp:TextBox>
                         <asp:Label ID="lblErrorRuc" runat="server" Font-Bold="True" ForeColor="Red" Text="Ingrese la cédula o ruc" Visible="False"></asp:Label>
                         <br />
-                        <b>
-                            <label class="form-label">Telefono</label></b>
+
+                        <b><label class="form-label">Telefono</label></b>
                         <asp:TextBox ID="txtCliTelefono" runat="server" class="form-control" placeholder="Telefono"></asp:TextBox>
                         <asp:Label ID="lblErorTelefono" runat="server" Font-Bold="True" ForeColor="Red" Text="Ingrese el teléfono" Visible="False"></asp:Label>
                         <br />
-                        <b>
-                            <label class="form-label">Correo Electronico</label></b>
+
+                        <b><label class="form-label">Correo Electronico</label></b>
                         <asp:TextBox ID="txtCliCorreo" runat="server" class="form-control" placeholder="e-mail"></asp:TextBox>
                         <asp:Label ID="lblErrorCorreo" runat="server" Font-Bold="True" ForeColor="Red" Text="Ingrese el correo Electrónico" Visible="False"></asp:Label>
                         <br />
+
                         <asp:Button ID="btnRegistrarCliente" runat="server" Text="Registrar" class="form-control btn btn-secondary border rounded-pill" OnClick="btnRegistrarCliente_Click" /><br />
 
                     </div>

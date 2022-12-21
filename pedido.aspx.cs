@@ -18,5 +18,18 @@ namespace parqueo
         {
             Response.Redirect("IncioSesion.aspx");
         }
+
+        protected void addNuevo_Click(object sender, EventArgs e)
+        {
+            panelPedido.Visible = true;
+            PanelGridPedido.Visible = true;
+            PanelMaterial.Visible = false;
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            panelPedido.Visible = false;
+            PanelMaterial.Visible = true;
+        }
     }
 }

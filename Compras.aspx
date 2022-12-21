@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Materiales.aspx.cs" Inherits="parqueo.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Compras.aspx.cs" Inherits="parqueo.WebForm2" %>
 
 <!DOCTYPE html>
 
@@ -33,7 +33,7 @@
             <ul class="nav nav-tabs justify-content-center">
                 <li class="nav-item"><a class="nav-link text-dark" href="menu.aspx">Home</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="registroCliProv.aspx">Registrar</a></li>
-                <li class="nav-item"><a class="nav-link active text-dark" href="Materiales.aspx">Material</a></li>
+                <li class="nav-item"><a class="nav-link active text-dark" href="Compras.aspx">Compras</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="pedido.aspx">Pedidos</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="factura.aspx">Ordenes</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="">Reporte de Gastos</a></li>

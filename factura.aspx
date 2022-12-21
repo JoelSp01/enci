@@ -25,7 +25,7 @@
             <ul class="nav nav-tabs justify-content-center">
                 <li class="nav-item"><a class="nav-link text-dark" href="menu.aspx">Home</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="cliente.aspx">Registrar</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="Proveedor.aspx">Material</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Compras.aspx">Compras</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="pedido.aspx">Pedidos</a></li>
                 <li class="nav-item"><a class="nav-link active text-dark" href="factura.aspx">Ordenes</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="">Reporte de Gastos</a></li>
