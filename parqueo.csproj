@@ -44,7 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,28 +68,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="estilosProveedor.css" />
+    <Content Include="estilos.css" />
     <Content Include="images\blanco.jpg" />
     <Content Include="images\cropped-isotipo-PUCE.png" />
     <Content Include="images\fondoInicioSesion.jpeg" />
+    <Content Include="images\kardex-5.jpg" />
     <Content Include="images\loginBackground.jpg" />
     <Content Include="images\logo-sac.png" />
     <Content Include="images\logopuce.png" />
     <Content Include="images\MPengu.png" />
+    <Content Include="kardex.aspx" />
     <Content Include="Web.config" />
     <Content Include="IncioSesion.aspx" />
     <Content Include="pruebaxd.aspx" />
     <Content Include="Compras.aspx" />
     <Content Include="pedido.aspx" />
     <Content Include="menu.aspx" />
-    <Content Include="factura.aspx" />
+    <Content Include="ordenProduccion.aspx" />
     <Content Include="registroCliProv.aspx" />
     <Content Include="reporte.aspx" />
+    <Content Include="impresion.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acc.cs" />
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="Encriptar.cs" />
+    <Compile Include="kardex.aspx.cs">
+      <DependentUpon>kardex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kardex.aspx.designer.cs">
+      <DependentUpon>kardex.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IncioSesion.aspx.cs">
@@ -127,12 +137,12 @@
     <Compile Include="menu.aspx.designer.cs">
       <DependentUpon>menu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="factura.aspx.cs">
-      <DependentUpon>factura.aspx</DependentUpon>
+    <Compile Include="ordenProduccion.aspx.cs">
+      <DependentUpon>ordenProduccion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="factura.aspx.designer.cs">
-      <DependentUpon>factura.aspx</DependentUpon>
+    <Compile Include="ordenProduccion.aspx.designer.cs">
+      <DependentUpon>ordenProduccion.aspx</DependentUpon>
     </Compile>
     <Compile Include="registroCliProv.aspx.cs">
       <DependentUpon>registroCliProv.aspx</DependentUpon>
@@ -147,6 +157,13 @@
     </Compile>
     <Compile Include="reporte.aspx.designer.cs">
       <DependentUpon>reporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="impresion.aspx.cs">
+      <DependentUpon>impresion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="impresion.aspx.designer.cs">
+      <DependentUpon>impresion.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

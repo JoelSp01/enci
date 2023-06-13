@@ -15,14 +15,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
-    <style type="text/css">
-        .auto-style2 {
-            width: 58px;
-            height: 58px;
-        }
-    </style>
-</head>
-<body class="bg bg-image" style="background-image: url('images/blanco.jpg');">
+    <link rel="stylesheet" href="estilos.css" />
+    </head>
+<body class="fondo">
     <form id="form1" runat="server">
         <div>
             <header>
@@ -41,10 +36,14 @@
                     <div>
                         <b>
                             <label class="form-label">Usuario</label></b>
-                        <asp:TextBox ID="txtUsuario" runat="server" class="form-control" placeholder="Nombre de Usuario"></asp:TextBox><br />
+                        <asp:TextBox ID="txtUsuario" runat="server" class="form-control" placeholder="Nombre de Usuario"></asp:TextBox>
+                        <asp:Label ID="lblErrorUsuarioIn" runat="server" ForeColor="Red" Text="Ingrese un usuario válido" Visible="False"></asp:Label>
+                        <br />
                         <b>
                             <label class="form-label">Contraseña</label></b>
-                        <asp:TextBox ID="txtContrasena" runat="server" type="password" class="form-control" placeholder="Contraseña"></asp:TextBox><br />
+                        <asp:TextBox ID="txtContrasena" runat="server" type="password" class="form-control" placeholder="Contraseña"></asp:TextBox>
+                        <asp:Label ID="lblErrorContraIn" runat="server" ForeColor="Red" Text="Ingrese una contraseña válida" Visible="False"></asp:Label>
+                        <br />
                         <asp:Button ID="btnLogIn" runat="server" Text="Iniciar Sesion" class="form-control btn btn-primary border rounded-pill" OnClick="btnLogIn_Click1" /><br />
                         <br />
                         <small>¿No tienes un usuario? <a class="text-white" id="irRegistro">Registrate</a></small>
@@ -56,15 +55,21 @@
                     <h3><b>Registrar</b></h3>
                     <div>
                         <b>
-                            <label class="form-label">Nombre</label></b>
-                        <asp:TextBox ID="txtRegNombre" runat="server" class="form-control" placeholder="Escriba su nombre"></asp:TextBox><br />
+                            <label class="form-label">Nombres y Apellidos</label></b>
+                        <asp:TextBox ID="txtRegNombre" runat="server" class="form-control" placeholder="Escriba su nombre"></asp:TextBox>
+                        <asp:Label ID="lblErrorNombre" runat="server" ForeColor="Red" Text="Campo Obligatorio" Visible="False"></asp:Label>
+                        <br />
                        
                         <b>
                             <label class="form-label">Usuario</label></b>
-                        <asp:TextBox ID="txtRegUsuario" runat="server" class="form-control" placeholder="Nombre de Usuario"></asp:TextBox><br />
+                        <asp:TextBox ID="txtRegUsuario" runat="server" class="form-control" placeholder="Nombre de Usuario"></asp:TextBox>
+                        <asp:Label ID="lblErrorUsRe" runat="server" ForeColor="Red" Text="Campo Obligatorio" Visible="False"></asp:Label>
+                        <br />
                         <b>
                             <label class="form-label">Contraseña</label></b>
-                        <asp:TextBox ID="txtRegContrasena" runat="server" type="password" class="form-control" placeholder="Contraseña" TextMode="Password"></asp:TextBox><br />
+                        <asp:TextBox ID="txtRegContrasena" runat="server" type="password" class="form-control" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
+                        <asp:Label ID="lblErrorContraReg" runat="server" ForeColor="Red" Text="Campo Obligatorio" Visible="False"></asp:Label>
+                        <br />
                         <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" class="form-control btn btn-primary border rounded-pill" data-bs-toggle="modal" data-bs-target="#modalReg" OnClick="btnRegistrar_Click" /><br />
                         <br />
                         <small>Ya tengo un usuario <a class="text-white" id="irLogin">Iniciar sesion</a></small>

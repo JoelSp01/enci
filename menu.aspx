@@ -9,8 +9,9 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="estilos.css" />
 </head>
-<body class="bg bg-image" style="background-image: url('images/blanco.jpg');">
+<body class="fondo">
     <form id="formMaenu" runat="server">
         <header>
             <div class="p-3" style="display: inline-block; width: 85%;">
@@ -27,9 +28,10 @@
                 <li class="nav-item"><a class="nav-link text-dark" href="registroCliProv.aspx">Registrar</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="Compras.aspx">Compras</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="pedido.aspx">Pedidos</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="factura.aspx">Ordenes</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="ordenProduccion.aspx">Ordenes</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte</a></li>
-                
+                <li class="nav-item"><a class="nav-link text-dark" href="kardex.aspx">Kardex</a></li>
+               
             </ul>
         </nav>
 

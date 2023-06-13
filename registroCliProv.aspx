@@ -9,8 +9,9 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="estilos.css" />
 </head>
-<body class="bg bg-image" style="background-image: url('images/blanco.jpg');">
+<body class="fondo">
     <form id="formCliente" runat="server">
         <header>
             <div class="p-3" style="display: inline-block; width: 85%;">
@@ -27,8 +28,9 @@
                 <li class="nav-item"><a class="nav-link active text-dark" href="registroCliProv.aspx">Registrar</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="Compras.aspx">Compras</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="pedido.aspx">Pedidos</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="factura.aspx">Ordenes</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="ordenProduccion.aspx">Ordenes</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="kardex.aspx">Kardex</a></li>
             </ul>
         </nav>
         <section>
@@ -68,7 +70,7 @@
 
             </asp:Panel>
             <asp:Panel ID="pnlClientes" Visible="false" style="width:63%; display:inline-block; float:left; margin-top:2%; margin-left:4%; overflow-y: scroll; height: 400px;" runat="server">
-                <asp:GridView ID="grdClientes" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanging="grdClientes_SelectedIndexChanging" OnRowDeleting="grdClientes_RowDeleting" DataKeyNames="CLI_ID" CellPadding="4" ForeColor="#333333" GridLines="None" Width="902px" PageSize="5">
+                <asp:GridView ID="grdClientes" style="width:100%" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanging="grdClientes_SelectedIndexChanging" OnRowDeleting="grdClientes_RowDeleting" DataKeyNames="CLI_ID" CellPadding="4" ForeColor="#333333" GridLines="None" Width="902px" PageSize="5">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:TemplateField HeaderText="Id" Visible="true">
@@ -139,7 +141,7 @@
                 </div>
             </asp:Panel>
             <asp:Panel ID="pnlProveedor" Visible="false" style="width:50%; display:inline-block; float:left; margin-top:2%; margin-left:4%; overflow-y: scroll; height: 400px;" runat="server">
-            <asp:GridView ID="grdProveedor" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="PROV_ID" ForeColor="#333333" GridLines="None" OnRowDeleting="grdProveedor_RowDeleting" OnSelectedIndexChanging="grdProveedor_SelectedIndexChanging" PageSize="5">
+            <asp:GridView ID="grdProveedor" style="width:100%" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="PROV_ID" ForeColor="#333333" GridLines="None" OnRowDeleting="grdProveedor_RowDeleting" OnSelectedIndexChanging="grdProveedor_SelectedIndexChanging" PageSize="5">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="Id">

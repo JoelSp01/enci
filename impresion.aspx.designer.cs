@@ -11,7 +11,7 @@ namespace parqueo
 {
 
 
-    public partial class WebForm7
+    public partial class WebForm9
     {
 
         /// <summary>
@@ -24,111 +24,111 @@ namespace parqueo
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control txtUsuario.
+        /// Control btnRegresar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
+        protected global::System.Web.UI.WebControls.ImageButton btnRegresar;
 
         /// <summary>
-        /// Control lblErrorUsuarioIn.
+        /// Control lblNumOrden.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorUsuarioIn;
+        protected global::System.Web.UI.WebControls.Label lblNumOrden;
 
         /// <summary>
-        /// Control txtContrasena.
+        /// Control lblFechaExp.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContrasena;
+        protected global::System.Web.UI.WebControls.Label lblFechaExp;
 
         /// <summary>
-        /// Control lblErrorContraIn.
+        /// Control lblArticulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorContraIn;
+        protected global::System.Web.UI.WebControls.Label lblArticulo;
 
         /// <summary>
-        /// Control btnLogIn.
+        /// Control lblFechaI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogIn;
+        protected global::System.Web.UI.WebControls.Label lblFechaI;
 
         /// <summary>
-        /// Control txtRegNombre.
+        /// Control lblNumPedido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRegNombre;
+        protected global::System.Web.UI.WebControls.Label lblNumPedido;
 
         /// <summary>
-        /// Control lblErrorNombre.
+        /// Control lblCantidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorNombre;
+        protected global::System.Web.UI.WebControls.Label lblCantidad;
 
         /// <summary>
-        /// Control txtRegUsuario.
+        /// Control lblFechaF.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRegUsuario;
+        protected global::System.Web.UI.WebControls.Label lblFechaF;
 
         /// <summary>
-        /// Control lblErrorUsRe.
+        /// Control lblEspecificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorUsRe;
+        protected global::System.Web.UI.WebControls.Label lblEspecificacion;
 
         /// <summary>
-        /// Control txtRegContrasena.
+        /// Control grdImprimir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRegContrasena;
+        protected global::System.Web.UI.WebControls.GridView grdImprimir;
 
         /// <summary>
-        /// Control lblErrorContraReg.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorContraReg;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control btnRegistrar.
+        /// Control lblTotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrar;
+        protected global::System.Web.UI.WebControls.Label lblTotal;
     }
 }

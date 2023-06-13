@@ -38,11 +38,12 @@ namespace parqueo
 
         
         //VERIFICAMOS SI EL USUSARIO EXISTE
-        public DataSet verificarUs(string strUsuario)
+        public DataSet verificarUs(string strUsuario, string  strClave)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_SELECT_USUARIO");
             conectar.AsignarParametros("users", strUsuario, DbType.String);
+            conectar.AsignarParametros("pass", strClave, DbType.String);
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;
@@ -105,6 +106,143 @@ namespace parqueo
             conectar.AsignarParametros("ruc", strRuc, DbType.String);
             conectar.AsignarParametros("telefono", strTelefono, DbType.String);
             conectar.AsignarParametros("correoElectronico", strCorreo, DbType.String);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        //***************************************************ORDEN DE PEDIDO******************************
+
+        public DataSet insertarPedido(int intId,int intEstado, string fechaIngreso, string fechaFinal, int intIdCliente, int intIdUsuario)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INSERT_ORDEN_PEDIDO");
+            conectar.AsignarParametros("id", intId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("estado", intEstado.ToString(), DbType.Int32);
+            conectar.AsignarParametros("fechaIngreso", fechaIngreso, DbType.String);
+            conectar.AsignarParametros("fechaFinal", fechaFinal, DbType.String);
+            conectar.AsignarParametros("idCliente", intIdCliente.ToString(), DbType.Int32);
+            conectar.AsignarParametros("idUsuario", intIdUsuario.ToString(), DbType.Int32);            
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+
+        public DataSet actualizarPedido(int intId,string fechaIngreso, string fechaFinal, int intIdCliente)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATE_ORDEN_PEDIDO");                      
+            conectar.AsignarParametros("fechaIngreso", fechaIngreso, DbType.String);
+            conectar.AsignarParametros("fechaFinal", fechaFinal, DbType.String);
+            conectar.AsignarParametros("idCliente", intIdCliente.ToString(), DbType.Int32);
+            conectar.AsignarParametros("id", intId.ToString(), DbType.Int32);            
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+
+
+        public DataSet insertarProducto(int intEstado, string strNombre, double dbCantidad, double dbPvp, int intOrpId)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INSERT_PRODUCTO");
+            conectar.AsignarParametros("estado", intEstado.ToString(), DbType.Int32);
+            conectar.AsignarParametros("nombre", strNombre, DbType.String);
+            conectar.AsignarParametros("cantidad", dbCantidad.ToString(), DbType.Double);
+            conectar.AsignarParametros("pvp", dbPvp.ToString(), DbType.Double);
+            conectar.AsignarParametros("orpId", intOrpId.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+
+        public DataSet insertarPedProMat(int intProId, int intMatId)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INSERT_PED_PRO_MATERIAL");
+            conectar.AsignarParametros("proId", intProId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("matId", intMatId.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet ObtenerMatProductoId(int intId)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_MAT_PRODUCTO_ID");
+            conectar.AsignarParametros("proid", intId.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet eliminarMatProducto(int intId)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_DELETE_CASCADA_MAT_PRO");
+            conectar.AsignarParametros("proid", intId.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet eliminarMatProductoOrden(int intId)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_DELETE_CASCADA_MAT_PRO_ORDEN");
+            conectar.AsignarParametros("orpid", intId.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet eliminarMat(int intId)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_DELETE_PED_PRO_MAT");
+            conectar.AsignarParametros("id", intId.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet ObtenerMaxPedido()
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_MAX_ORDEN_PEDIDO");
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet ObtenerProductos(int intId)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_PRODUCTOS");
+            conectar.AsignarParametros("id", intId.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet ObtenerPedidos()
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_PEDIDOS");
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet ObtenerPedidosId(int intId)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_PEDIDOS_ID");
+            conectar.AsignarParametros("orpId", intId.ToString(), DbType.Int32);
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;
@@ -258,34 +396,6 @@ namespace parqueo
             return dsDatos;
         }
 
-
-        /*
-        public DataSet regCliente(int intEstado, string strNombre, string strApellido, string strNumIdentificacion, string strTelefono)
-        {
-            conectar.Conectar();
-            conectar.CrearComando("SP_INSERT_CLIENTE");
-            conectar.AsignarParametros("estado", intEstado.ToString(), DbType.Int32);
-            conectar.AsignarParametros("nombre", strNombre, DbType.String);
-            conectar.AsignarParametros("apellido", strApellido, DbType.String);
-            conectar.AsignarParametros("numIdentificacion", strNumIdentificacion, DbType.String);
-            conectar.AsignarParametros("telefono", strTelefono, DbType.String);
-            DataSet dsDatos = conectar.EjecutarDataset();
-            conectar.Desconectar();
-            return dsDatos;
-        }
-        */
-
-        //public DataSet Usuario(string strUsuario, string strClave)
-        //{
-        //    conectar.Conectar();
-        //    conectar.CrearComando("SP_SELECT_CLIENTE");
-        //    //conectar.AsignarParametros("USUARIO", strUsuario, DbType.String);
-        //    //conectar.AsignarParametros("CLAVE", strClave, DbType.String);
-        //    DataSet dsDatos = conectar.EjecutarDataset();
-        //    conectar.Desconectar();
-        //    return dsDatos;
-        //}
-
         public DataSet ItemsCatalogo(string strCodigo)
         {
             conectar.Conectar();
@@ -295,5 +405,86 @@ namespace parqueo
             conectar.Desconectar();
             return dsDatos;
         }
+
+
+        //***************************************************ORDEN DE PRODUCCION******************************
+        public DataSet OrdenPedidoOPId(int Id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_PEDIDO_OP_ID");
+            conectar.AsignarParametros("id", Id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+
+        public DataSet insertarEspe(string especificacion, string fecha, int orpId, int proId)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INSERT_ESPECIFICACION");
+            conectar.AsignarParametros("espe", especificacion, DbType.String);
+            conectar.AsignarParametros("fecha", fecha, DbType.String);
+            conectar.AsignarParametros("orpId", orpId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("proId", proId.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet impresion(int Id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_IMPRESION");
+            conectar.AsignarParametros("id", Id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet ProductoOPId(int Id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_PRODUCTO_OP_ID");
+            conectar.AsignarParametros("id", Id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet ProductoDatosOP(int Id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_DATOS_PRODUCTO_OP_ID");
+            conectar.AsignarParametros("id", Id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+
+        public DataSet ProductoTotalOPId(int Id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_PRODUCTO_TOTAL_OP_ID");
+            conectar.AsignarParametros("id", Id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        //***************************************************REPORTES******************************
+
+        public DataSet reportes(string fechaI, string fechaF)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_REPORTES");
+            conectar.AsignarParametros("fechaI", fechaI, DbType.String);
+            conectar.AsignarParametros("fechaF", fechaF, DbType.String);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar(); 
+            return dsDatos;
+        }
+
     }
 }
