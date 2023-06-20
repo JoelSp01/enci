@@ -35,7 +35,19 @@
             </ul>
         </nav>
         <section class="container text-center mt-5">
-            <img src="images/kardex-5.jpg"/>
+            <div>
+                <asp:Label ID="Label1" runat="server" Text="Producto"></asp:Label>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:Label ID="Label2" runat="server" Text="Proveedor"></asp:Label>
+                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:Label ID="Label3" runat="server" Text="Fecha desde"></asp:Label>
+                <asp:TextBox ID="TextBox3" Type="date" runat="server"></asp:TextBox>
+                <asp:Label ID="Label4" runat="server" Text="Fecha hasta"></asp:Label>
+                <asp:TextBox ID="TextBox4" Type="date" runat="server"></asp:TextBox>
+            </div>
+            <div>
+                <img src="images/kardex-5.jpg" />
+            </div>
         </section>
     </form>
 </body>

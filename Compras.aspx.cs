@@ -315,7 +315,16 @@ namespace parqueo
                     }
                     else
                     {
-                        DataSet dsDatos = datos.registrarMateriales(Int32.Parse(lblIdProveedor.Text), Int32.Parse(lblIdClasificacion.Text), txtDetalle.Text, txtAut.Text, Double.Parse(txtCantidad.Text), Double.Parse(txtCostoUnidad.Text), Double.Parse(txtSubtotal.Text), Double.Parse(txtTotal.Text), 1, int.Parse(listIva.SelectedValue));
+                        DateTime fechaact = DateTime.Parse(DateTime.Now.ToShortDateString());
+                        fechaact.ToString("yyyy-MM-dd");
+                        string[] fechac = fechaact.ToString().Split('/');
+                        string fecha = fechac[2].Substring(0,4) + "-" + fechac[1] + "-" + fechac[0];
+                       // lblFechaExp.Text = fechaact.ToString("yyyy-MM-dd");
+
+
+
+                        DataSet dsDatos = datos.registrarMateriales(Int32.Parse(lblIdProveedor.Text), Int32.Parse(lblIdClasificacion.Text), txtDetalle.Text, txtAut.Text, 
+                        Double.Parse(txtCantidad.Text), Double.Parse(txtCostoUnidad.Text), Double.Parse(txtSubtotal.Text), Double.Parse(txtTotal.Text), 1, int.Parse(listIva.SelectedValue), fecha);
                         CargarMaterial();
                     }
 

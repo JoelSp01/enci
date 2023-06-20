@@ -107,7 +107,7 @@
                             </ItemTemplate>
 
                         </asp:TemplateField>
-                        <asp:BoundField HeaderText="FechaCompra" />
+                        <asp:BoundField DataField="fechaR" HeaderText="FechaCompra" />
                         <asp:BoundField DataField="proveedor" HeaderText="Proveedor" />
                         <asp:BoundField DataField="ruc" HeaderText="Proveedor RUC" />
                         <asp:BoundField DataField="autorizacion" HeaderText="Autorización" />

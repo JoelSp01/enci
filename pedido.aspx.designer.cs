@@ -330,6 +330,24 @@ namespace parqueo
         protected global::System.Web.UI.WebControls.Label lblErrorMaterial;
 
         /// <summary>
+        /// Control cantMaterial.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cantMaterial;
+
+        /// <summary>
+        /// Control lblErrorCantMaterial.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorCantMaterial;
+
+        /// <summary>
         /// Control btnAgMat.
         /// </summary>
         /// <remarks>

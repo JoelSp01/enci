@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.IO;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace parqueo
 {
@@ -304,7 +305,8 @@ namespace parqueo
             //if (lblIdPedido.Text!="")
             //{
             DataSet dsMatProductoId = datos.ObtenerMatProductoId(int.Parse(lblIdPedido.Text));
-            if (dsMatProductoId.Tables[0].Rows.Count > 0)
+            string x = dsMatProductoId.Tables[0].Rows[0].ToString();
+       if (dsMatProductoId.Tables[0].Rows.Count > 0)
             {
                 grdMaterial.Visible = true;
                 grdMaterial.DataSource = dsMatProductoId.Tables[0];
@@ -330,6 +332,91 @@ namespace parqueo
             //}
         }
 
+        /// <summary>
+        /// CALCULO PRECIO MAT PEDIDO
+        /// </summary>
+      /*  protected void calcularCantidadPedido(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (verificarNumero(cantMaterial.Text) == true)
+                {
+
+                    if (double.Parse(cantMaterial.Text) >= 0)
+                    {
+                       /// lblErrorCantidad.Visible = false;
+                    }
+                    else
+                    {
+                        Double cantidad = Double.Parse(cantMaterial.Text);
+                        Double costoUnitario = Double.Parse(grdMaterial.mat_costoU);
+                        Double subtotal = cantidad * costoUnitario;
+                        Double total = (subtotal * Double.Parse(listIva.SelectedItem.Text)) + subtotal;
+
+                        txtSubtotal.Text = subtotal.ToString();
+                        txtTotal.Text = total.ToString();
+
+
+                    }
+                    else
+                    {
+                        lblErrorCantidad.Visible = false;
+                        lblErrorCostoU.Visible = false;
+
+                        Double cantidad = Double.Parse(txtCantidad.Text);
+                        Double costoUnitario = Double.Parse(txtCostoUnidad.Text);
+                        Double subtotal = cantidad * costoUnitario;
+                        Double total = (subtotal * 0) + subtotal;
+
+                        txtSubtotal.Text = subtotal.ToString();
+                        txtTotal.Text = total.ToString();
+
+                    }
+                }
+                else
+                {
+
+
+                    if (verificarNumero(txtCantidad.Text) == false)
+                    {
+                        lblErrorCantidad.Visible = true;
+                        txtCantidad.Text = "0";
+                    }
+
+
+                    if (verificarNumero(txtCostoUnidad.Text) == false)
+                    {
+                        lblErrorCostoU.Visible = true;
+                        txtCostoUnidad.Text = "0";
+                    }
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                MsgBox("alert", "UPS, algo ha pasado por facor revise que los campos esten correctos");
+            }
+
+
+
+        }
+
+
+        public bool verificarNumero(String numComprobar)
+        {
+            Regex r = new Regex(@"\d+$");
+            if (r.IsMatch(numComprobar))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }*/
         protected void cargarPedidos()
         {
             try
@@ -397,7 +484,7 @@ namespace parqueo
                 {
                     if (listMaterial.SelectedItem.Text != "[Seleccione]")
                     {
-                        datos.insertarPedProMat(int.Parse(Session["IdProd"].ToString()), int.Parse(listMaterial.SelectedValue));
+                        datos.insertarPedProMat(int.Parse(Session["IdProd"].ToString()), int.Parse(listMaterial.SelectedValue), double.Parse(cantMaterial.Text));
                         cargarMatProductoId();
                         lblErrorMaterial.Visible = false;
                         listMaterial.SelectedIndex = -1;
@@ -408,12 +495,14 @@ namespace parqueo
                         lblErrorMaterial.Text = "Debe seleccionar un Material";
                         lblErrorMaterial.Visible = true;
                     }
+                    
                 }
                 else
                 {
                     lblErrorMaterial.Text = "Debe seleccionar un Producto";
                     lblErrorMaterial.Visible = true;
                 }
+                
             }
             catch (Exception)
             {

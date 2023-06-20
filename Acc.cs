@@ -159,12 +159,13 @@ namespace parqueo
         }
 
 
-        public DataSet insertarPedProMat(int intProId, int intMatId)
+        public DataSet insertarPedProMat(int intProId, int intMatId, double doubleOpmCant)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_INSERT_PED_PRO_MATERIAL");
             conectar.AsignarParametros("proId", intProId.ToString(), DbType.Int32);
             conectar.AsignarParametros("matId", intMatId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("opmCant", doubleOpmCant.ToString(), DbType.Double);
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;
@@ -316,7 +317,7 @@ namespace parqueo
             return dsDatos;
         }
         //***************************************************MATERIALES******************************
-        public DataSet registrarMateriales(int intProvId, int proId, string strDetalle, string strAutorizacion, double dblCantidad, double dblCostoU, double dblCostoT, double dblTotal, int intEstado, int intMatIva)
+        public DataSet registrarMateriales(int intProvId, int proId, string strDetalle, string strAutorizacion, double dblCantidad, double dblCostoU, double dblCostoT, double dblTotal, int intEstado, int intMatIva, string fechaR)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_INSERT_MATERIALES");  
@@ -330,6 +331,7 @@ namespace parqueo
             conectar.AsignarParametros("total", dblTotal.ToString(), DbType.Double);
             conectar.AsignarParametros("estado", intEstado.ToString(), DbType.Int32);
             conectar.AsignarParametros("iva", intMatIva.ToString(), DbType.Int32);
+            conectar.AsignarParametros("fechaR", fechaR.ToString(), DbType.String);
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;

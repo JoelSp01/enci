@@ -176,10 +176,13 @@
             </section>
             <section style="margin-top: 5%">
                 <asp:Panel ID="PanelMaterial" Style="width: 20%; display: inline-block; float: left;" Visible="false" runat="server">
-                    <div style="margin-left: 5%; display: inline-block; width: 40%; float: left;">
+                    <div style="margin-left: 5%; display: inline-block; width: 40%; float: left; height: 294px;">
                         <label>Material</label>
                         <asp:DropDownList ID="listMaterial" class="form-control" runat="server" OnSelectedIndexChanged="listMaterial_SelectedIndexChanged"></asp:DropDownList>
-                        <asp:Label runat="server" Style="color: red" Visible="false" ID="lblErrorMaterial"><small>Campo necesario</small></asp:Label><br />
+                        <asp:Label runat="server" Style="color: red" Visible="false" ID="lblErrorMaterial"><small>Campo necesario</small></asp:Label>
+                        <label>Cantidad</label>
+                        <asp:TextBox ID="cantMaterial" class="form-control" runat="server"></asp:TextBox><br />
+                        <asp:Label runat="server" Style="color: red" Visible="false" ID="lblErrorCantMaterial"><small>Campo necesario</small></asp:Label>
                         <asp:Button ID="btnAgMat" runat="server" class="form-control btn btn-secondary border rounded-pill" Text="Añadir" OnClick="btnAgMat_Click" />
                     </div>
 
@@ -197,7 +200,7 @@
                             </asp:TemplateField>
                             <asp:BoundField DataField="pro_nombre" HeaderText="Producto" />
                             <asp:BoundField DataField="mat_detalle" HeaderText="Detalle" />
-                            <asp:BoundField DataField="mat_cantidad" HeaderText="Cantidad" />
+                            <asp:BoundField DataField="opm_cantidad" HeaderText="Cantidad" />
                             <asp:BoundField DataField="mat_costoU" HeaderText="Costo Unitario" />
                             <asp:BoundField DataField="mat_costoT" HeaderText="Costo Total" />
                             <asp:BoundField DataField="mat_total" HeaderText="Total" />

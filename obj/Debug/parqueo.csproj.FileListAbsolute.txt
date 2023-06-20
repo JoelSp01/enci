@@ -692,12 +692,9 @@ D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO
 D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\K4os.Compression.LZ4.Streams.dll
 D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\BouncyCastle.Crypto.dll
 D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\Ubiety.Dns.Core.dll
-D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\System.Memory.dll
-D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\System.Runtime.CompilerServices.Unsafe.dll
 D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\System.Buffers.dll
 D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\K4os.Compression.LZ4.dll
 D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\K4os.Hash.xxHash.dll
-D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\System.Numerics.Vectors.dll
 D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\MySql.Data.xml
 D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Universidad\SEMESTRE 5\BASE DE DATOS 2\Respaldo enci\PROYECTO ENCI FINALIZADO\parqueo\obj\Debug\parqueo.csproj.AssemblyReference.cache
