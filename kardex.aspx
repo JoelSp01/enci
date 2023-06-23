@@ -29,7 +29,8 @@
                 <li class="nav-item"><a class="nav-link text-dark" href="Compras.aspx">Compras</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="pedido.aspx">Pedidos</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="ordenProduccion.aspx">Ordenes</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte<asp:Label ID="lblIdProveedor" runat="server"></asp:Label>
+                    </a></li>
                 <li class="nav-item"><a class="nav-link active text-dark" href="kardex.aspx">Kardex</a></li>
                
             </ul>
@@ -37,17 +38,52 @@
         <section class="container text-center mt-5">
             <div>
                 <asp:Label ID="Label1" runat="server" Text="Producto"></asp:Label>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
                 <asp:Label ID="Label2" runat="server" Text="Proveedor"></asp:Label>
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="listProveedor" runat="server" AutoPostBack="True" OnSelectedIndexChanged="listProveedor_SelectedIndexChanged">
+                </asp:DropDownList>
                 <asp:Label ID="Label3" runat="server" Text="Fecha desde"></asp:Label>
                 <asp:TextBox ID="TextBox3" Type="date" runat="server"></asp:TextBox>
                 <asp:Label ID="Label4" runat="server" Text="Fecha hasta"></asp:Label>
                 <asp:TextBox ID="TextBox4" Type="date" runat="server"></asp:TextBox>
             </div>
+            <br />
             <div>
-                <img src="images/kardex-5.jpg" />
+                <label>ENTRADAS</label>
+                <label>SALIDAS</label>
+                <label>SALDOS</label>
             </div>
+            <asp:Panel ID="Panel1" runat="server">
+                <asp:GridView ID="grdKardex" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+
+                    <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:BoundField DataField="kdx_fechaC" HeaderText="Fecha Entrada" />
+                        <asp:BoundField DataField="detalle" HeaderText="Detalle" />
+                        <asp:BoundField DataField="cantidad_entrada" HeaderText="Cantidad" />
+                        <asp:BoundField DataField="costo_unitario_e" HeaderText="Costo Unitario" />
+                        <asp:BoundField DataField="costo_total_e" HeaderText="Costo Total" />
+                        <asp:BoundField DataField="fecha_salida" HeaderText="Fecha Salida" />
+                        <asp:BoundField DataField="cantidad_salida" HeaderText="Cantidad" />
+                        <asp:BoundField DataField="costo_unitario_s" HeaderText="Costo Unitario" />
+                        <asp:BoundField DataField="costo_total_s" HeaderText="Costo Total" />
+                        <asp:BoundField DataField="cantidad_existente" HeaderText="Cantidad" />
+                        <asp:BoundField DataField="costo_unitario_ex" HeaderText="Costo Unitario" />
+                        <asp:BoundField DataField="costo_total_ex" HeaderText="Costo Total" />
+                    </Columns>
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+
+                </asp:GridView>
+            </asp:Panel>
         </section>
     </form>
 </body>

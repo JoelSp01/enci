@@ -37,6 +37,7 @@
             <div class="text-center">
                 <asp:Button ID="cliente" runat="server" class="btn btn-dark rounded-3" Text="Cliente" OnClick="cliente_Click" />
                 <asp:Button ID="proveedor" runat="server" class="btn btn-dark rounded-3" Text="Proveedor" OnClick="proveedor_Click" />
+                <asp:Button ID="material" runat="server" class="btn btn-dark rounded-3" Text="Material" OnClick="material_Click" />
             </div>
             <asp:Panel ID="panelCliente" Visible="false" style="width:20%; display:inline-block; float:left; margin-left: 2%;" runat="server">
                 <div class="border p-2 rounded-3">
@@ -169,6 +170,61 @@
             </asp:GridView>
         </asp:Panel>
             
+        </section>
+        <section>
+            <asp:Panel ID="pnlMaterial" Visible="false" style="width:20%; display:inline-block; float:left; margin-left: 2%;" runat="server">
+                <div class="border p-2 rounded-3">
+
+                    <h5><b>Registrar Material</b><asp:Label ID="lblMaterial" runat="server" Visible="False"></asp:Label>
+                    </h5>
+                    <div>
+                        <b>
+                            <label class="form-label">Proveedor</label></b>
+                        <asp:DropDownList ID="listProveedor" runat="server" class="form-control" AutoPostBack="True" OnSelectedIndexChanged="listProveedor_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:Label ID="lblErrorProv" runat="server" Font-Bold="True" ForeColor="Red" Text="Seleccione un proveedor" Visible="False"></asp:Label>
+                        <br />
+
+
+
+                        <b>
+                            <label class="form-label">Material</label></b>
+                        <asp:TextBox ID="txtDetMaterial" runat="server" class="form-control" placeholder="Documento de Identidad"></asp:TextBox>
+                        <asp:Label ID="lblErrorMat" runat="server" Font-Bold="True" ForeColor="Red" Text="Ingrese un material" Visible="False"></asp:Label>
+                        <br />
+
+                        <asp:Button ID="btnRegMat" runat="server" Text="Registrar" class="form-control btn btn-secondary border rounded-pill" OnClick="btnRegMat_Click" /><br />
+
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </asp:Panel>
+            <asp:Panel ID="pnlGridMaterial" Visible="false" style="width:50%; display:inline-block; float:left; margin-top:2%; margin-left:4%; overflow-y: scroll; height: 400px;" runat="server">
+            <asp:GridView ID="grdMaterial" style="width:100%" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="mat_id" ForeColor="#333333" GridLines="None" OnRowDeleting="grdProveedor_RowDeleting" OnSelectedIndexChanging="grdProveedor_SelectedIndexChanging" PageSize="5">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:TemplateField HeaderText="Id">
+                        <ItemTemplate>
+                            <asp:Label ID="lblProveedorId" runat="server" Text='<%# Bind("mat_id") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField HeaderText="Proveedor" DataField="proveedor" />
+                    <asp:BoundField HeaderText="Material" DataField="detalle" />
+                    <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
+                    <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
+                </Columns>
+                <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            </asp:GridView>
+        </asp:Panel>
         </section>
         <%--<p>
             &nbsp;

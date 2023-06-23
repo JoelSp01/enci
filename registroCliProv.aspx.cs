@@ -19,8 +19,15 @@ namespace parqueo
         Acc datos = new Acc();
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarClientes();
-            CargarProveedor();
+
+            if (!IsPostBack)
+            {
+                CargarProveedor();
+                CargarClientes();
+                CargarProveedor();
+                CargarMaterial();
+            }
+           
         }
 
         protected void CargarClientes()
@@ -44,6 +51,15 @@ namespace parqueo
             DataSet dsProveedor = datos.ObtenerProveedor();
             if (dsProveedor.Tables[0].Rows.Count > 0)
             {
+
+                listProveedor.DataSource = dsProveedor.Tables[0];
+                listProveedor.DataTextField = "PROV_NOMBRE";
+                listProveedor.DataValueField = "PROV_ID";
+                listProveedor.DataBind();
+                this.listProveedor.Items.Insert(0, "[Seleccione]");
+
+
+
                 grdProveedor.DataSource = dsProveedor.Tables[0];
                 grdProveedor.DataBind();
             }
@@ -53,6 +69,9 @@ namespace parqueo
                 grdProveedor.DataBind();
             }
         }
+
+
+
 
         protected void cerrarSesion_Click(object sender, EventArgs e)
         {
@@ -106,11 +125,13 @@ namespace parqueo
             pnlClientes.Visible = true;
             panelCliente.Visible = true;
             panelProveedor.Visible = false;
+            pnlProveedor.Visible = false;
+            pnlMaterial.Visible = false;
+            pnlGridMaterial.Visible = false;
             txtCliNombre.Text = "";
             txtCliCedula.Text = "";
             txtCliTelefono.Text = "";
             txtCliCorreo.Text = "";
-            pnlProveedor.Visible = false;
 
             btnRegistrarCliente.Text = "Registrar";
         }
@@ -120,11 +141,13 @@ namespace parqueo
             pnlProveedor.Visible = true;
             panelProveedor.Visible = true;
             panelCliente.Visible = false;
+            pnlClientes.Visible = false;
+            pnlMaterial.Visible = false;
+            pnlGridMaterial.Visible = false;
 
             txtProvNombre.Text = "";
             txtProvRuc.Text = "";
             txtProvRazonSocial.Text = "";
-            pnlClientes.Visible = false;
             btnRegProveedor.Text = "Registrar";
         }
 
@@ -246,6 +269,59 @@ namespace parqueo
 
         }
 
-  
+        protected void material_Click(object sender, EventArgs e)
+        {
+            pnlClientes.Visible = false;
+            panelCliente.Visible = false;
+            panelProveedor.Visible = false;
+            pnlProveedor.Visible = false;
+            pnlMaterial.Visible = true;
+            pnlGridMaterial.Visible = true;
+            txtCliNombre.Text = "";
+            txtCliCedula.Text = "";
+            txtCliTelefono.Text = "";
+            txtCliCorreo.Text = "";
+        }
+
+        protected void btnRegMat_Click(object sender, EventArgs e)
+        {
+            if(listProveedor.SelectedItem.Text != "[Seleccione]")
+            {
+                datos.registrarMateriales(Int32.Parse(listProveedor.SelectedValue), txtDetMaterial.Text);
+                CargarMaterial();
+            }
+            else
+            {
+                string Mensaje = "Debe Seleccionar un Proveedor";
+            }
+         //   
+        }
+        protected void CargarMaterial()
+        {
+            try
+            {
+
+                DataSet dsMat = datos.ObtenerMaterial();
+                if (dsMat.Tables[0].Rows.Count > 0)
+                {
+                    grdMaterial.DataSource = dsMat.Tables[0];
+                    grdMaterial.DataBind();
+                }
+                else
+                {
+                    grdMaterial.DataSource = "";
+                    grdMaterial.DataBind();
+                }
+            }
+            catch (Exception)
+            {
+                //MsgBox("alert", "UPS, algo ha pasado por facor revise que los campos esten correctos");
+            }
+        }
+
+        protected void listProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -187,7 +187,7 @@
                     </div>
 
                 </asp:Panel>
-                <asp:Panel ID="PanelGridMaterial" Style="overflow-y: scroll; height: 200px; width: 35%; margin-left: 25%; margin-top: 5%;" runat="server">
+                <asp:Panel ID="PanelGridMaterial" Style="overflow-y: scroll; height: 200px; width: 40%; margin-left: 25%; margin-top: 5%;" runat="server">
                     <asp:GridView ID="grdMaterial" style="width:100%" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="OPM_ID" OnRowDeleting="grdMaterial_RowDeleting">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
@@ -198,6 +198,7 @@
                                 </ItemTemplate>
 
                             </asp:TemplateField>
+                            <asp:BoundField DataField="opm_fechaS" HeaderText="Fecha" />
                             <asp:BoundField DataField="pro_nombre" HeaderText="Producto" />
                             <asp:BoundField DataField="mat_detalle" HeaderText="Detalle" />
                             <asp:BoundField DataField="opm_cantidad" HeaderText="Cantidad" />

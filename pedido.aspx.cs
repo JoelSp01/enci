@@ -484,11 +484,18 @@ namespace parqueo
                 {
                     if (listMaterial.SelectedItem.Text != "[Seleccione]")
                     {
+                        DateTime fechaact = DateTime.Parse(DateTime.Now.ToShortDateString());
+                        fechaact.ToString("yyyy-MM-dd");
+                        string[] fechac = fechaact.ToString().Split('/');
+                        string fecha = fechac[2].Substring(0, 4) + "-" + fechac[1] + "-" + fechac[0];
+                        // lblFechaExp.Text = fechaact.ToString("yyyy-MM-dd");
+
                         datos.insertarPedProMat(int.Parse(Session["IdProd"].ToString()), int.Parse(listMaterial.SelectedValue), double.Parse(cantMaterial.Text));
                         cargarMatProductoId();
                         lblErrorMaterial.Visible = false;
                         listMaterial.SelectedIndex = -1;
                         PanelGridMaterial.Visible = true;
+
                     }
                     else
                     {
