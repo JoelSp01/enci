@@ -326,7 +326,7 @@ namespace parqueo
                 lblIdIva.Text = listIva.SelectedItem.ToString();
                 //INSERCION A COMPRAS
                 datos.insertarCompras(Int32.Parse(lblIdProveedor.Text), Int32.Parse(lblIdClasificacion.Text),
-                Int32.Parse(lblIdClasificacion.Text), txtFechaEntrada.Text, double.Parse(txtCantidad.Text), double.Parse(txtCostoUnidad.Text), double.Parse(lblIdIva.Text),
+                Int32.Parse(lblIdMaterial.Text), txtFechaEntrada.Text, double.Parse(txtCantidad.Text), double.Parse(txtCostoUnidad.Text), double.Parse(lblIdIva.Text),
                 double.Parse(txtSubtotal.Text), double.Parse(txtTotal.Text), Int32.Parse(txtAut.Text));
                 cargarCompras();
 
@@ -487,34 +487,34 @@ namespace parqueo
 
         protected void grdMateriales_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            //try
-            //{
-            //    btnIngresarMaterial.Text = "Actualizar";
-            //    int IdMaterial = int.Parse(((Label)grdMateriales.Rows[e.NewSelectedIndex].FindControl("lblMaterialId")).Text);
-            //    lblIdMaterial.Text = IdMaterial.ToString();
-            //    DataSet dsMaterialId = datos.ObtenerMaterialId(IdMaterial);
+            try
+            {
+                btnIngresarMaterial.Text = "Actualizar";
+                int IdMaterial = int.Parse(((Label)grdMateriales.Rows[e.NewSelectedIndex].FindControl("lblMaterialId")).Text);
+                lblIdMaterial.Text = IdMaterial.ToString();
+                DataSet dsMaterialId = datos.ObtenerMaterialId(IdMaterial);
 
-            //    if (dsMaterialId.Tables[0].Rows.Count > 0)
-            //    {
-            //        listProveedor.SelectedValue = dsMaterialId.Tables[0].Rows[0]["prov_id"].ToString();
-            //        txtRuc.Text = dsMaterialId.Tables[0].Rows[0]["ruc"].ToString();
-            //        txtAut.Text = dsMaterialId.Tables[0].Rows[0]["autorizacion"].ToString();
-            //        txtDetalle.Text = dsMaterialId.Tables[0].Rows[0]["detalle"].ToString();
-            //        listClasificacion.SelectedValue = dsMaterialId.Tables[0].Rows[0]["cla_id"].ToString();
-            //        txtCantidad.Text = dsMaterialId.Tables[0].Rows[0]["cantidad"].ToString();
-            //        txtCostoUnidad.Text = dsMaterialId.Tables[0].Rows[0]["costo_unitario"].ToString();
-            //        txtSubtotal.Text = dsMaterialId.Tables[0].Rows[0]["costo_total"].ToString();
-            //        listIva.SelectedValue = dsMaterialId.Tables[0].Rows[0]["iva_id"].ToString();
-            //        txtTotal.Text = dsMaterialId.Tables[0].Rows[0]["total"].ToString();
-            //    }
+                if (dsMaterialId.Tables[0].Rows.Count > 0)
+                {
+                    listProveedor.SelectedValue = dsMaterialId.Tables[0].Rows[0]["prov_id"].ToString();
+                    txtRuc.Text = dsMaterialId.Tables[0].Rows[0]["ruc"].ToString();
+                    txtAut.Text = dsMaterialId.Tables[0].Rows[0]["autorizacion"].ToString();
+                    listMaterial.SelectedValue = dsMaterialId.Tables[0].Rows[0]["detalle"].ToString();
+                    listClasificacion.SelectedValue = dsMaterialId.Tables[0].Rows[0]["cla_id"].ToString();
+                    txtCantidad.Text = dsMaterialId.Tables[0].Rows[0]["cantidad"].ToString();
+                    txtCostoUnidad.Text = dsMaterialId.Tables[0].Rows[0]["costo_unitario"].ToString();
+                    txtSubtotal.Text = dsMaterialId.Tables[0].Rows[0]["costo_total"].ToString();
+                    listIva.SelectedValue = dsMaterialId.Tables[0].Rows[0]["iva_id"].ToString();
+                    txtTotal.Text = dsMaterialId.Tables[0].Rows[0]["total"].ToString();
+                }
 
 
 
-            //}
-            //catch (Exception)
-            //{
-            //    MsgBox("alert", "UPS, algo ha pasado por facor revise que los campos esten correctos");
-            //}
+            }
+            catch (Exception)
+            {
+                MsgBox("alert", "UPS, algo ha pasado por facor revise que los campos esten correctos");
+            }
 
         }
 

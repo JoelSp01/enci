@@ -356,6 +356,24 @@ namespace parqueo
 
             return dsDatos;
         }
+        public DataSet actualizarCompras(String fechaC, int provId, int autoC, int matId, int clasificacion, double cantidad, double costoU, double costoUT, int total, int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATE_COMPRAS");
+            conectar.AsignarParametros("fechaC", fechaC,DbType.String);
+            conectar.AsignarParametros("provId", provId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("autoC", autoC.ToString(), DbType.Int32);
+            conectar.AsignarParametros("matId", matId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("clasificacion", clasificacion.ToString(), DbType.Int32);
+            conectar.AsignarParametros("cantidad", cantidad.ToString(), DbType.Double);
+            conectar.AsignarParametros("costoU", costoU.ToString(), DbType.Double);
+            conectar.AsignarParametros("costoUT", costoUT.ToString(), DbType.Double);
+            conectar.AsignarParametros("total", total.ToString(), DbType.Double);
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
         //***************************************************MATERIALES******************************
         public DataSet registrarMateriales(int provId, string detalle, int estado)
         {
