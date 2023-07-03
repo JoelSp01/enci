@@ -54,68 +54,75 @@
                         <asp:DropDownList ID="listProveedor" style="padding-inline: 4%;" class="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="listProveedor_SelectedIndexChanged">
                         </asp:DropDownList> 
                         <asp:Label ID="lblErrorProveedor" runat="server" Text="Elija Proveedor" ForeColor="Red" Visible="False"></asp:Label>
-                        <br />
-                        <label class="form-label">RUC</label>
-                        <asp:TextBox ID="txtRuc" style="width: 100%" class="form-control" runat="server" Enabled="False"></asp:TextBox>                    
+          
+                        <label class="form-label" style="margin-top:2%">Material</label>
+                        <asp:DropDownList ID="listMaterial" runat="server" style="padding-inline: 4%;" class="form-control"></asp:DropDownList>
+                        <asp:Label ID="lblErrorDetalle" runat="server" Text="Ingrese un Detalle" ForeColor="Red" Visible="False"></asp:Label>
                        
-                        &nbsp;<asp:Label ID="Label2" runat="server" Text="Autorización"></asp:Label>
+                        <label class="form-label" style="margin-top:2%">Cantidad</label>
+                        <asp:TextBox ID="txtCantidad" type="text" class="form-control" runat="server" AutoPostBack="True" OnTextChanged="calcularSubTotal"></asp:TextBox>
+                        <asp:Label ID="lblErrorCantidad" runat="server" ForeColor="Red" Text="Ingrese  números válidos" Visible="False"></asp:Label>
+
+                        <label class="form-label" style="margin-top:2%">IVA</label> 
+                        <asp:DropDownList ID="listIva" runat="server" style="padding-inline: 4%;" class="form-control" AutoPostBack="True" OnSelectedIndexChanged="listIva_SelectedIndexChanged"></asp:DropDownList>                        
+                        <asp:Label ID="lblErrorIva" runat="server" ForeColor="Red" Text="Escoja IVA" Visible="False"></asp:Label>
+                        
+                        <label class="form-label" style="margin-top:2%">Total</label>
+                        <asp:TextBox ID="txtTotal"  class="form-control" style="width: 100%" runat="server" Enabled="False"></asp:TextBox>
+                        
+
+                        <label class="form-label" style="margin-top:2%">Caracteristica</label>
+                        <asp:DropDownList ID="listClasificacion" style="padding-inline: 4%;" class="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="listClasificacion_SelectedIndexChanged">
+                        </asp:DropDownList>
+                        <asp:Label ID="lblErrorCaracteristica" runat="server" ForeColor="Red" Text="Seleccione Característica" Visible="False"></asp:Label><br />
+
+                    </div>
+                    <div style=" margin-left: 5%; display: inline-block; width:40%; float: left;">
+
+                        <label class="form-label">RUC</label>
+                        <asp:TextBox ID="txtRuc" style="width: 100%" class="form-control" runat="server" Enabled="False"></asp:TextBox><br />
+                        
+                        <label  style="margin-top:10%">Autorización</label>
                         <asp:TextBox ID="txtAut" type="number" class="form-control" runat="server"></asp:TextBox>
                         <asp:Label ID="lblErrorAutori" runat="server" Text="Ingrese Autorización" ForeColor="Red" Visible="False"></asp:Label>
                          
-                        <label class="form-label">Detalle</label>
-                        <asp:TextBox ID="txtDetalle" class="form-control" runat="server"></asp:TextBox>
-                        <asp:Label ID="lblErrorDetalle" runat="server" Text="Ingrese un Detalle" ForeColor="Red" Visible="False"></asp:Label>
-                         
-                        <label class="form-label">Caracteristica</label>
-                        <asp:DropDownList ID="listClasificacion" style="padding-inline: 4%;" class="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="listClasificacion_SelectedIndexChanged">
-                        </asp:DropDownList>
-                        <asp:Label ID="lblErrorCaracteristica" runat="server" ForeColor="Red" Text="Seleccione Característica" Visible="False"></asp:Label>
-                        
-                    </div>
-                    <div style=" margin-left: 5%; display: inline-block; width:40%; float: left;">
-                        <label class="form-label">Cantidad</label>
-                        <asp:TextBox ID="txtCantidad" type="text" class="form-control" runat="server" AutoPostBack="True" OnTextChanged="calcularSubTotal"></asp:TextBox>
-                        <asp:Label ID="lblErrorCantidad" runat="server" ForeColor="Red" Text="Ingrese  números válidos" Visible="False"></asp:Label>
-                        
-                        <label class="form-label">C/Unitario</label>
+           
+                        <label class="form-label" style="margin-top:6%">C/Unitario</label>
                         <asp:TextBox ID="txtCostoUnidad" type="text" class="form-control" runat="server" OnTextChanged="calcularSubTotal" AutoPostBack="True"></asp:TextBox>
                          <asp:Label ID="lblErrorCostoU" runat="server" ForeColor="Red" Text="Ingrese  números validos" Visible="False"></asp:Label>
-                         
-                        <label class="form-label">C/Total</label>
+                        
+                        <label class="form-label" style="margin-top:6%">C/Unitario + IVA</label>
                         <asp:TextBox ID="txtSubtotal" type="text" class="form-control" style="width: 100%" runat="server" AutoPostBack="True" Enabled="False"></asp:TextBox>
-                         
-                        <label class="form-label">IVA</label> 
-                        <asp:DropDownList ID="listIva" runat="server" style="padding-inline: 4%;" class="form-control" AutoPostBack="True" OnSelectedIndexChanged="listIva_SelectedIndexChanged">
-                        </asp:DropDownList>
-                        <asp:Label ID="lblErrorIva" runat="server" ForeColor="Red" Text="Escoja IVA" Visible="False"></asp:Label>
+
+                        <label class="form-label" style="margin-top:10%">Fecha</label>
+                        <asp:TextBox ID="txtFechaEntrada" type="date" runat="server" class="form-control"></asp:TextBox><br />
+                        <asp:Label ID="lblErrorFecha" runat="server" Text="Label" Visible="False"></asp:Label>
                         <br />
-                        <label class="form-label">Total</label>
-                        <asp:TextBox ID="txtTotal"  class="form-control" style="width: 100%" runat="server" Enabled="False"></asp:TextBox><br /><br />
                     </div>
                     <asp:Button ID="btnIngresarMaterial" runat="server" Text="Confirmar" class="form-control btn btn-secondary border rounded-pill" OnClick="btnIngresarMaterial_Click" /><br />
                 </asp:Panel>
 
             <asp:Panel ID="panelGridMat" style="overflow-y: scroll; height: 400px; width: 65%" Visible="false" runat="server">
 
-                <asp:GridView ID="grdMateriales" style="width:100%" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="MAT_ID"  OnRowDeleting="grdMateriales_RowDeleting" OnSelectedIndexChanging="grdMateriales_SelectedIndexChanging" OnSelectedIndexChanged="grdMateriales_SelectedIndexChanged">
+                <asp:GridView ID="grdMateriales" style="width:100%" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="COM_ID"  OnRowDeleting="grdMateriales_RowDeleting" OnSelectedIndexChanging="grdMateriales_SelectedIndexChanging">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:TemplateField HeaderText="ID">
 
                             <ItemTemplate>
-                                <asp:Label ID="lblMaterialId" runat="server" Text='<%# Bind("mat_id") %>'></asp:Label>
+                                <asp:Label ID="lblMaterialId" runat="server" Text='<%# Bind("com_id") %>'></asp:Label>
                             </ItemTemplate>
 
                         </asp:TemplateField>
-                        <asp:BoundField DataField="fechaR" HeaderText="FechaCompra" />
+                        <asp:BoundField DataField="com_fecha" HeaderText="FechaCompra" />
                         <asp:BoundField DataField="proveedor" HeaderText="Proveedor" />
                         <asp:BoundField DataField="ruc" HeaderText="Proveedor RUC" />
                         <asp:BoundField DataField="autorizacion" HeaderText="Autorización" />
                         <asp:BoundField DataField="detalle" HeaderText="Detalle" />
                         <asp:BoundField DataField="clasificacion" HeaderText="Clasificacion" />
                         <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
-                        <asp:BoundField DataField="costo_unitario" HeaderText="CostoU" />
-                        <asp:BoundField DataField="costo_total" HeaderText="CostoT" />
+                        <asp:BoundField DataField="costo_unitario" HeaderText="Costo U" />
+                        <asp:BoundField DataField="costo_unitario_iva" HeaderText="Costo U + Iva" />
                         <asp:BoundField DataField="total" HeaderText="Total" />
                         <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
                         <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />

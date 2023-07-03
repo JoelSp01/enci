@@ -330,6 +330,24 @@ namespace parqueo
         protected global::System.Web.UI.WebControls.Label lblErrorMaterial;
 
         /// <summary>
+        /// Control txtFechaS.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFechaS;
+
+        /// <summary>
+        /// Control lblErrorFechaS.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorFechaS;
+
+        /// <summary>
         /// Control cantMaterial.
         /// </summary>
         /// <remarks>

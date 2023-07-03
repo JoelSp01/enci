@@ -175,12 +175,12 @@
             <asp:Panel ID="pnlMaterial" Visible="false" style="width:20%; display:inline-block; float:left; margin-left: 2%;" runat="server">
                 <div class="border p-2 rounded-3">
 
-                    <h5><b>Registrar Material</b><asp:Label ID="lblMaterial" runat="server" Visible="False"></asp:Label>
+                    <h5><b>Registrar Material</b><asp:Label ID="lblIdMaterial" runat="server" Visible="False"></asp:Label>
                     </h5>
                     <div>
                         <b>
                             <label class="form-label">Proveedor</label></b>
-                        <asp:DropDownList ID="listProveedor" runat="server" class="form-control" AutoPostBack="True" OnSelectedIndexChanged="listProveedor_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:DropDownList ID="listProveedor" runat="server" class="form-control" AutoPostBack="True"></asp:DropDownList>
                         <asp:Label ID="lblErrorProv" runat="server" Font-Bold="True" ForeColor="Red" Text="Seleccione un proveedor" Visible="False"></asp:Label>
                         <br />
 
@@ -188,6 +188,7 @@
 
                         <b>
                             <label class="form-label">Material</label></b>
+
                         <asp:TextBox ID="txtDetMaterial" runat="server" class="form-control" placeholder="Documento de Identidad"></asp:TextBox>
                         <asp:Label ID="lblErrorMat" runat="server" Font-Bold="True" ForeColor="Red" Text="Ingrese un material" Visible="False"></asp:Label>
                         <br />
@@ -200,12 +201,12 @@
                 </div>
             </asp:Panel>
             <asp:Panel ID="pnlGridMaterial" Visible="false" style="width:50%; display:inline-block; float:left; margin-top:2%; margin-left:4%; overflow-y: scroll; height: 400px;" runat="server">
-            <asp:GridView ID="grdMaterial" style="width:100%" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="mat_id" ForeColor="#333333" GridLines="None" OnRowDeleting="grdProveedor_RowDeleting" OnSelectedIndexChanging="grdProveedor_SelectedIndexChanging" PageSize="5">
+            <asp:GridView ID="grdMaterialR" style="width:100%" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="mat_id" ForeColor="#333333" GridLines="None" OnRowDeleting="grdMaterialR_RowDeleting" OnSelectedIndexChanging="grdEditarMaterial" PageSize="5">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:TemplateField HeaderText="Id">
+                    <asp:TemplateField HeaderText="ID">
                         <ItemTemplate>
-                            <asp:Label ID="lblProveedorId" runat="server" Text='<%# Bind("mat_id") %>'></asp:Label>
+                            <asp:Label ID="lblMaterialId" runat="server" Text='<%# Bind("mat_id") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField HeaderText="Proveedor" DataField="proveedor" />

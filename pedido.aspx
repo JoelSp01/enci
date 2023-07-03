@@ -180,6 +180,9 @@
                         <label>Material</label>
                         <asp:DropDownList ID="listMaterial" class="form-control" runat="server" OnSelectedIndexChanged="listMaterial_SelectedIndexChanged"></asp:DropDownList>
                         <asp:Label runat="server" Style="color: red" Visible="false" ID="lblErrorMaterial"><small>Campo necesario</small></asp:Label>
+                        <label>Fecha</label>
+                        <asp:TextBox ID="txtFechaS" type="date" class="form-control" runat="server"></asp:TextBox>
+                        <asp:Label runat="server" Style="color: red" Visible="false" ID="lblErrorFechaS"><small>Campo necesario</small></asp:Label>
                         <label>Cantidad</label>
                         <asp:TextBox ID="cantMaterial" class="form-control" runat="server"></asp:TextBox><br />
                         <asp:Label runat="server" Style="color: red" Visible="false" ID="lblErrorCantMaterial"><small>Campo necesario</small></asp:Label>

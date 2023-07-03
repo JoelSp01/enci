@@ -316,15 +316,103 @@ namespace parqueo
             conectar.Desconectar();
             return dsDatos;
         }
+        //***************************************************COMPRAS******************************
+
+        public DataSet insertarCompras(int provId, int codigo, int matId, string fecha, double cantidad, double costoU, double iva, double costoUT, double costoT, int auto)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INSERT_COMPRAS");
+            conectar.AsignarParametros("provId", provId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("codigo", codigo.ToString(), DbType.Int32);
+            conectar.AsignarParametros("matId", matId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("fecha", fecha, DbType.String);
+            conectar.AsignarParametros("cantidad", cantidad.ToString(), DbType.Double);
+            conectar.AsignarParametros("costoU", costoU.ToString(), DbType.Double);
+            conectar.AsignarParametros("iva", iva.ToString(), DbType.Double);
+            conectar.AsignarParametros("costoUT", costoUT.ToString(), DbType.Double);
+            conectar.AsignarParametros("costoT", costoT.ToString(), DbType.Double);
+            conectar.AsignarParametros("auto", auto.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet ObtenerCompras()
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_COMPRAS");
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet eliminarCompras(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_DELETE_COMPRAS");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+
+            return dsDatos;
+        }
         //***************************************************MATERIALES******************************
-        public DataSet registrarMateriales(int provId, string detalle)
+        public DataSet registrarMateriales(int provId, string detalle, int estado)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_INSERT_MATERIALES");  
             conectar.AsignarParametros("provId", provId.ToString(), DbType.Int32);
             conectar.AsignarParametros("detalle", detalle, DbType.String);
+            conectar.AsignarParametros("estado", estado.ToString(), DbType.Int32);
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet eliminarMaterialRegistrado(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_DELETE_MATERIAL_REGISTRADO");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+
+            return dsDatos;
+        }
+
+        public DataSet obtenerMaterialRegistrado(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_MATERIAL_REGISTRADO_ID");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+
+            return dsDatos;
+        }
+
+        public DataSet obtenerMaterialRegistradoProveedor(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_MATERIAL_PROVEEDOR");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+
+            return dsDatos;
+        }
+
+
+        public DataSet actualizarMaterialRegistrado(int id, int provId, String detalle)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATE_MATERIAL_REGISTRADO");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+            conectar.AsignarParametros("provId", provId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("detalle", detalle, DbType.String);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+
             return dsDatos;
         }
 
@@ -364,6 +452,15 @@ namespace parqueo
         {
             conectar.Conectar();
             conectar.CrearComando("SP_SELECT_MATERIALES");
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet ObtenerMaterialesR()
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_MATERIAL_REGISTRADO");
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;
@@ -479,23 +576,29 @@ namespace parqueo
         }
 
 
-        public DataSet insertarKardex(int I_MAT_ID, int I_OPM_ID, int I_PROV_ID, string I_KDX_FECHACOMPRA, double I_KDX_ENTRADACANT, double I_KDX_ENTRADAPRECIOU, int I_KDX_ESTADO)
+        public void insertarComprasKardex(int I_MAT_ID, int I_OPM_ID, int I_PROV_ID, string I_KDX_FECHACOMPRA, double I_KDX_ENTRADACANT, double I_KDX_ENTRADAPRECIOU, int I_KDX_ESTADO)
         {
-            conectar.Conectar();
-            conectar.CrearComando("SP_INSERT_COMPRA_KARDEX");
-            conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
-            conectar.AsignarParametros("I_OPM_ID", I_OPM_ID.ToString(), DbType.Int32);
-            conectar.AsignarParametros("I_PROV_ID", I_OPM_ID.ToString(), DbType.Int32);
-            conectar.AsignarParametros("I_KDX_FECHACOMPRA", I_KDX_FECHACOMPRA, DbType.String);
-            conectar.AsignarParametros("I_KDX_ENTRADACANT", I_KDX_ENTRADACANT.ToString(), DbType.Double);
-            conectar.AsignarParametros("I_KDX_ENTRADAPRECIOU", I_KDX_ENTRADAPRECIOU.ToString(), DbType.Int32);
-            conectar.AsignarParametros("I_KDX_ESTADO", I_KDX_ESTADO.ToString(), DbType.Int32);
-            DataSet dsDatos = conectar.EjecutarDataset();
-            conectar.Desconectar();
-            return dsDatos;
+            try
+            {
+                
+                conectar.Conectar();
+                conectar.CrearComando("SP_INSERT_COMPRA_KARDEX");
+                conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
+                conectar.AsignarParametros("I_OPM_ID", I_OPM_ID.ToString(), DbType.Int32);
+                conectar.AsignarParametros("I_PROV_ID", I_PROV_ID.ToString(), DbType.Int32);
+                conectar.AsignarParametros("I_KDX_FECHACOMPRA", I_KDX_FECHACOMPRA, DbType.String);
+                conectar.AsignarParametros("I_KDX_ENTRADACANT", I_KDX_ENTRADACANT.ToString(), DbType.Double);
+                conectar.AsignarParametros("I_KDX_ENTRADAPRECIOU", I_KDX_ENTRADAPRECIOU.ToString(), DbType.Int32);
+                conectar.AsignarParametros("I_KDX_ESTADO", I_KDX_ESTADO.ToString(), DbType.Int32);
+                conectar.EjecutarDataset();
+                conectar.Desconectar();
+            }
+           catch(Exception ex)
+            {
+
+            }
+
         }
-
-
 
 
         //***************************************************REPORTES******************************
@@ -511,7 +614,53 @@ namespace parqueo
             return dsDatos;
         }
 
+        public DataSet CantidadMaterial(int I_MAT_ID, int I_PROV_ID)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_MAX_CANTIDAD_MATERIAL");
+            conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
+            conectar.AsignarParametros("I_PROV_ID", I_PROV_ID.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
 
+        public DataSet PrecioUnitarioMaterial(int I_MAT_ID, int I_PROV_ID)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_MAX_PTOTAL_MATERIAL");
+            conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
+            conectar.AsignarParametros("I_PROV_ID", I_PROV_ID.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
 
+        public DataSet VerificarMaterial(int I_MAT_ID, int I_PROV_ID)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_VERIFICA_MATERIAL");
+            conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
+            conectar.AsignarParametros("I_PROV_ID", I_PROV_ID.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public void InsertarKardex(int I_MAT_ID, int I_OPM_ID, int I_PROV_ID, string I_KDX_FECHACOMPRA, double I_KDX_ENTRADACANT, double I_KDX_ENTRADAPRECIOU, double I_KDX_EXISTCANT, double I_KDX_EXISTPRECIOU)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INSERT_KARDEX");
+            conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
+            conectar.AsignarParametros("I_OPM_ID", I_OPM_ID.ToString(), DbType.Int32);
+            conectar.AsignarParametros("I_PROV_ID", I_PROV_ID.ToString(), DbType.Int32);
+            conectar.AsignarParametros("I_KDX_FECHACOMPRA", I_KDX_FECHACOMPRA, DbType.Date);
+            conectar.AsignarParametros("I_KDX_ENTRADACANT", I_KDX_ENTRADACANT.ToString(), DbType.Double);
+            conectar.AsignarParametros("I_KDX_ENTRADAPRECIOU", I_KDX_ENTRADAPRECIOU.ToString(), DbType.Double);
+            conectar.AsignarParametros("I_KDX_EXISTCANT", I_KDX_EXISTCANT.ToString(), DbType.Double);
+            conectar.AsignarParametros("I_KDX_EXISTPRECIOU", I_KDX_EXISTPRECIOU.ToString(), DbType.Double);
+            conectar.EjecutarDataset();
+            conectar.Desconectar();
+        }
     }
 }

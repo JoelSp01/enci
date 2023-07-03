@@ -27,7 +27,7 @@ namespace parqueo
 
                     cargarPedido();
                 }
-                catch (Exception x)
+                catch (Exception)
                 {
 
                 }

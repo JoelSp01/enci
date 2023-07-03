@@ -22,12 +22,11 @@ namespace parqueo
 
             if (!IsPostBack)
             {
-                CargarProveedor();
                 CargarClientes();
                 CargarProveedor();
-                CargarMaterial();
+                CargarMaterialR();
             }
-           
+
         }
 
         protected void CargarClientes()
@@ -84,7 +83,7 @@ namespace parqueo
             {
                 //Pongo las instrucciones para Actualizar
                 DataSet dsDatos = datos.actualizarCliente(Int32.Parse(lblIdCliente.Text), txtCliNombre.Text, txtCliCedula.Text, txtCliTelefono.Text, txtCliCorreo.Text);
-               btnRegistrarCliente.Text = "Registar";
+                btnRegistrarCliente.Text = "Registar";
 
             }
             else
@@ -182,13 +181,13 @@ namespace parqueo
                 DataSet dsClienteId = datos.EliminarCliente(IdCliente);
                 CargarClientes();
             }
-            catch (Exception )
+            catch (Exception)
             {
 
             }
         }
 
-     
+
 
 
 
@@ -225,7 +224,7 @@ namespace parqueo
                     txtProvRazonSocial.Text = dsProveedorId.Tables[0].Rows[0]["prov_razonSocial"].ToString();
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
 
             }
@@ -237,7 +236,7 @@ namespace parqueo
             if (btnRegProveedor.Text == "Actualizar")
             {
                 //Pongo las instrucciones para Actualizar
-                DataSet dsProveedor = datos.actualizarProveedor(Int32.Parse(lblIdProveedor.Text),txtProvNombre.Text,txtProvRuc.Text,txtProvRazonSocial.Text);
+                DataSet dsProveedor = datos.actualizarProveedor(Int32.Parse(lblIdProveedor.Text), txtProvNombre.Text, txtProvRuc.Text, txtProvRazonSocial.Text);
                 btnRegProveedor.Text = "Registar";
 
             }
@@ -285,32 +284,71 @@ namespace parqueo
 
         protected void btnRegMat_Click(object sender, EventArgs e)
         {
-            if(listProveedor.SelectedItem.Text != "[Seleccione]")
+
+            if (btnRegMat.Text == "Actualizar")
             {
-                datos.registrarMateriales(Int32.Parse(listProveedor.SelectedValue), txtDetMaterial.Text);
-                CargarMaterial();
+                //Pongo las instrucciones para Actualizar
+                datos.actualizarMaterialRegistrado(int.Parse(lblIdMaterial.Text), Int32.Parse(listProveedor.SelectedValue), txtDetMaterial.Text);
+                btnRegMat.Text = "Registar";
+                listProveedor.SelectedIndex = -1;
+                txtDetMaterial.Text = "";
+                CargarMaterialR();
+               
             }
             else
             {
-                string Mensaje = "Debe Seleccionar un Proveedor";
+
+                if (listProveedor.SelectedItem.Text != "[Seleccione]")
+                {
+                    datos.registrarMateriales(Int32.Parse(listProveedor.SelectedValue), txtDetMaterial.Text,1);
+                    CargarMaterialR();
+                }
+                else
+                {
+                    string Mensaje = "Debe Seleccionar un Proveedor";
+                }
             }
-         //   
+            //   
         }
-        protected void CargarMaterial()
+
+        //protected void CargarMaterial()
+        //{
+        //    try
+        //    {
+
+        //        DataSet dsMat = datos.ObtenerMaterial();
+        //        if (dsMat.Tables[0].Rows.Count > 0)
+        //        {
+        //            grdMaterialR.DataSource = dsMat.Tables[0];
+        //            grdMaterialR.DataBind();
+        //        }
+        //        else
+        //        {
+        //            grdMaterialR.DataSource = "";
+        //            grdMaterialR.DataBind();
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        //MsgBox("alert", "UPS, algo ha pasado por facor revise que los campos esten correctos");
+        //    }
+        //}
+
+        protected void CargarMaterialR()
         {
             try
             {
 
-                DataSet dsMat = datos.ObtenerMaterial();
+                DataSet dsMat = datos.ObtenerMaterialesR();
                 if (dsMat.Tables[0].Rows.Count > 0)
                 {
-                    grdMaterial.DataSource = dsMat.Tables[0];
-                    grdMaterial.DataBind();
+                    grdMaterialR.DataSource = dsMat.Tables[0];
+                    grdMaterialR.DataBind();
                 }
                 else
                 {
-                    grdMaterial.DataSource = "";
-                    grdMaterial.DataBind();
+                    grdMaterialR.DataSource = "";
+                    grdMaterialR.DataBind();
                 }
             }
             catch (Exception)
@@ -319,9 +357,49 @@ namespace parqueo
             }
         }
 
-        protected void listProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        protected void grdEditarMaterial(object sender, GridViewSelectEventArgs e)
         {
+            try
+            {
+                btnRegMat.Text = "Actualizar";
+                int IdMaterial = int.Parse(((Label)grdMaterialR.Rows[e.NewSelectedIndex].FindControl("lblMaterialId")).Text);
+                lblIdMaterial.Text = IdMaterial.ToString();
+                DataSet dsMaterialId = datos.obtenerMaterialRegistrado(IdMaterial);
+
+                if (dsMaterialId.Tables[0].Rows.Count > 0)
+                {
+                    listProveedor.SelectedValue = dsMaterialId.Tables[0].Rows[0]["prov_id"].ToString();
+                    txtDetMaterial.Text = dsMaterialId.Tables[0].Rows[0]["mat_detalle"].ToString();
+
+                }
+
+
+
+            }
+            catch (Exception)
+            {
+                //  MsgBox("alert", "UPS, algo ha pasado por facor revise que los campos esten correctos");
+            }
 
         }
+
+
+
+        protected void grdMaterialR_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            try
+            {
+
+                int IdMaterialR = int.Parse(grdMaterialR.DataKeys[e.RowIndex].Value.ToString());
+                DataSet dsMaterialRId = datos.eliminarMaterialRegistrado(IdMaterialR);
+                CargarMaterialR();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+
     }
 }

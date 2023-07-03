@@ -4,9 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="estilos.css" />
@@ -18,7 +18,7 @@
                 <h2>PUCE| Ibarra</h2>
             </div>
             <div class="p-3" style="display: inline-block; width: 10%;">
-                <asp:Button class="btn btn-secondary rounded-start" ID="cerrarSesion" runat="server" Text="Cerrar Sesion"/>
+                <asp:Button class="btn btn-secondary rounded-start" ID="cerrarSesion" runat="server" Text="Cerrar Sesion" />
             </div>
             <h2 class="text-center">Bienvenidos</h2>
         </header>
@@ -30,22 +30,29 @@
                 <li class="nav-item"><a class="nav-link text-dark" href="pedido.aspx">Pedidos</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="ordenProduccion.aspx">Ordenes</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte<asp:Label ID="lblIdProveedor" runat="server"></asp:Label>
-                    </a></li>
+                </a></li>
                 <li class="nav-item"><a class="nav-link active text-dark" href="kardex.aspx">Kardex</a></li>
-               
+
             </ul>
         </nav>
         <section class="container text-center mt-5">
             <div>
-                <asp:Label ID="Label1" runat="server" Text="Producto"></asp:Label>
-                <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
-                <asp:Label ID="Label2" runat="server" Text="Proveedor"></asp:Label>
-                <asp:DropDownList ID="listProveedor" runat="server" AutoPostBack="True" OnSelectedIndexChanged="listProveedor_SelectedIndexChanged">
-                </asp:DropDownList>
-                <asp:Label ID="Label3" runat="server" Text="Fecha desde"></asp:Label>
-                <asp:TextBox ID="TextBox3" Type="date" runat="server"></asp:TextBox>
-                <asp:Label ID="Label4" runat="server" Text="Fecha hasta"></asp:Label>
-                <asp:TextBox ID="TextBox4" Type="date" runat="server"></asp:TextBox>
+                <div style="width: 30%; display: inline-block">
+
+                    <asp:Label ID="Label2" runat="server" Text="Proveedor"></asp:Label>
+                    <asp:DropDownList ID="listProveedor" runat="server" AutoPostBack="True" Style="width: 100%;" class="form-control" OnSelectedIndexChanged="listProveedor_SelectedIndexChanged">
+                    </asp:DropDownList>
+                </div>
+                <div style="width: 30%; display: inline-block">
+
+                    <asp:Label ID="Label3" runat="server" Text="Fecha desde"></asp:Label>
+                    <asp:TextBox ID="TextBox3" Type="date" runat="server" Style="width: 100%;" class="form-control"></asp:TextBox>
+                </div>
+                <div style="width: 30%; display: inline-block">
+
+                    <asp:Label ID="Label4" runat="server" Text="Fecha hasta"></asp:Label>
+                    <asp:TextBox ID="TextBox4" Type="date" runat="server" Style="width: 100%;" class="form-control"></asp:TextBox>
+                </div>
             </div>
             <br />
             <div>
@@ -60,6 +67,8 @@
                     <Columns>
                         <asp:BoundField DataField="kdx_fechaC" HeaderText="Fecha Entrada" />
                         <asp:BoundField DataField="detalle" HeaderText="Detalle" />
+                        <asp:BoundField DataField="proveedor" HeaderText="Proveedor" />
+                        <asp:BoundField DataField="material" HeaderText="Material" />
                         <asp:BoundField DataField="cantidad_entrada" HeaderText="Cantidad" />
                         <asp:BoundField DataField="costo_unitario_e" HeaderText="Costo Unitario" />
                         <asp:BoundField DataField="costo_total_e" HeaderText="Costo Total" />
