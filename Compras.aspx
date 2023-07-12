@@ -26,6 +26,7 @@
                 <asp:Label ID="lblIdProveedor" runat="server" Visible="False"></asp:Label>
                 Compras<asp:Label ID="lblIdClasificacion" runat="server" Visible="False"></asp:Label>
                 <asp:Label ID="lblIdIva" runat="server" Visible="False"></asp:Label>
+                <asp:Label ID="lblIdCompra" runat="server" Visible="False"></asp:Label>
             </h2>
         </header>
                     

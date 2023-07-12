@@ -21,8 +21,11 @@
                 <asp:Button class="btn btn-secondary rounded-start" ID="cerrarSesion" runat="server" Text="Cerrar Sesion" OnClick="cerrarSesion_Click" />
             </div>
             <h2 class="text-center">
+                <asp:Label ID="lblIdProd" runat="server" Visible="False"></asp:Label>
                 <asp:Label ID="lblIdCLiente" runat="server" Enabled="False" Visible="False"></asp:Label>
                 Orden de Pedido<asp:Label ID="lblIdPedidoAc" runat="server" Enabled="False" Visible="False"></asp:Label>
+                <asp:Label ID="lblIdMatPed" runat="server" Visible="False"></asp:Label>
+                <asp:Label ID="lblCantMatPed" runat="server" Visible="False"></asp:Label>
             </h2>
         </header>
         <nav>
@@ -38,10 +41,10 @@
             </ul>
         </nav>
         <div class="m-3">
-            <div style="display:inline-block">
+            <div style="display: inline-block">
                 <asp:Button ID="addNuevo" class="btn btn-dark" runat="server" Text="Nuevo" OnClick="addNuevo_Click" />
             </div>
-            <div style="float:right; display:inline-block; margin-right:45%">
+            <div style="float: right; display: inline-block; margin-right: 45%">
                 <asp:Label ID="lblTitulo" runat="server" Text="Orden de Pedido:" Visible="False"></asp:Label>
                 <asp:Label ID="lblIdPedido" runat="server"></asp:Label>
                 <asp:Label ID="lblIdUsuario" runat="server"></asp:Label>
@@ -82,10 +85,10 @@
                     </div>
                     <br />
                     <asp:Button ID="btnProducto" Style="margin-left: 5%; width: 95%" runat="server" Text="Producto" class="form-control btn btn-secondary border rounded-pill" OnClick="btnProducto_Click" />
-         
+
                 </asp:Panel>
-                <asp:Panel ID="Panel1" Style="overflow-y: scroll; height: 220px; width: 65%; margin-left: 25%;" runat="server">
-                    <asp:GridView ID="grdOrdenes" style="width:100%" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grdOrdenes_SelectedIndexChanged" OnSelectedIndexChanging="grdOrdenes_SelectedIndexChanging" DataKeyNames="orp_id" OnRowDeleting="grdOrdenes_RowDeleting">
+                <asp:Panel ID="Panel1" Style="overflow: hidden; height: 220px; width: 65%; margin-left: 25%;" runat="server">
+                    <asp:GridView ID="grdOrdenes" Style="width: 100%" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanging="grdOrdenes_SelectedIndexChanging" DataKeyNames="orp_id" OnRowDeleting="grdOrdenes_RowDeleting">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
                             <asp:TemplateField HeaderText="Id">
@@ -120,7 +123,7 @@
             </section>
 
             <section>
-                <asp:Panel ID="pnlProducto" Style="width: 20%; display: inline-block; position:absolute " runat="server"  Visible="false"> 
+                <asp:Panel ID="pnlProducto" Style="width: 20%; display: inline-block; position: absolute" runat="server" Visible="false">
                     <div style="margin-left: 5%; width: 100%; float: left;">
                         <label>Producto</label>
                         <asp:TextBox ID="txtNombreProducto" class="form-control" runat="server"></asp:TextBox>
@@ -143,8 +146,8 @@
                     <asp:Button ID="btnAgregarPro" Style="margin-left: 5%; margin-top: 3%" runat="server" Text="+ Añadir" class="form-control btn btn-secondary border rounded-pill" OnClick="btnAgregarPro_Click" />
 
                 </asp:Panel>
-                <asp:Panel ID="Panel2" Style="overflow-y: scroll; height: 200px; width: 45%; margin-left: 25%; margin-top: 3%;" runat="server">
-                    <asp:GridView ID="grdProductos" style="width:100%" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grdProductos_SelectedIndexChanged" OnSelectedIndexChanging="grdProductos_SelectedIndexChanging" DataKeyNames="pro_id" OnRowDeleting="grdProductos_RowDeleting">
+                <asp:Panel ID="Panel2" Style="overflow: hidden; height: 200px; width: 45%; margin-left: 25%; margin-top: 3%;" runat="server">
+                    <asp:GridView ID="grdProductos" Style="width: 100%" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grdProductos_SelectedIndexChanged" OnSelectedIndexChanging="grdProductos_SelectedIndexChanging" DataKeyNames="pro_id" OnRowDeleting="grdProductos_RowDeleting">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
                             <asp:TemplateField HeaderText="Id">
@@ -176,22 +179,22 @@
             </section>
             <section style="margin-top: 5%">
                 <asp:Panel ID="PanelMaterial" Style="width: 20%; display: inline-block; float: left;" Visible="false" runat="server">
-                    <div style="margin-left: 5%; display: inline-block; width: 40%; float: left; height: 294px;">
+                    <div style="margin-left: 5%; display: inline-block; width: 100%; float: left; height: 294px;">
                         <label>Material</label>
-                        <asp:DropDownList ID="listMaterial" class="form-control" runat="server" OnSelectedIndexChanged="listMaterial_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:DropDownList ID="listMaterial" class="form-control" runat="server" OnSelectedIndexChanged="listMaterial_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                         <asp:Label runat="server" Style="color: red" Visible="false" ID="lblErrorMaterial"><small>Campo necesario</small></asp:Label>
                         <label>Fecha</label>
                         <asp:TextBox ID="txtFechaS" type="date" class="form-control" runat="server"></asp:TextBox>
                         <asp:Label runat="server" Style="color: red" Visible="false" ID="lblErrorFechaS"><small>Campo necesario</small></asp:Label>
-                        <label>Cantidad</label>
+                        <label>Cantidad Estimada</label>
                         <asp:TextBox ID="cantMaterial" class="form-control" runat="server"></asp:TextBox><br />
                         <asp:Label runat="server" Style="color: red" Visible="false" ID="lblErrorCantMaterial"><small>Campo necesario</small></asp:Label>
                         <asp:Button ID="btnAgMat" runat="server" class="form-control btn btn-secondary border rounded-pill" Text="Añadir" OnClick="btnAgMat_Click" />
                     </div>
 
                 </asp:Panel>
-                <asp:Panel ID="PanelGridMaterial" Style="overflow-y: scroll; height: 200px; width: 40%; margin-left: 25%; margin-top: 5%;" runat="server">
-                    <asp:GridView ID="grdMaterial" style="width:100%" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="OPM_ID" OnRowDeleting="grdMaterial_RowDeleting">
+                <asp:Panel ID="PanelGridMaterial" Style="overflow: hidden; height: 200px; width: 60%; margin-left: 25%; margin-top: 5%;" runat="server" Visible="False">
+                    <asp:GridView ID="grdMaterial" Style="width: 100%" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="OPM_ID" OnRowDeleting="grdMaterial_RowDeleting" OnSelectedIndexChanging="grdMaterial_SelectedIndexChanging">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
                             <asp:TemplateField HeaderText="Id">
@@ -203,12 +206,14 @@
                             </asp:TemplateField>
                             <asp:BoundField DataField="opm_fechaS" HeaderText="Fecha" />
                             <asp:BoundField DataField="pro_nombre" HeaderText="Producto" />
-                            <asp:BoundField DataField="mat_detalle" HeaderText="Detalle" />
+                            <asp:BoundField DataField="mat_detalle" HeaderText="Material" />
                             <asp:BoundField DataField="opm_cantidad" HeaderText="Cantidad" />
                             <asp:BoundField DataField="mat_costoU" HeaderText="Costo Unitario" />
-                            <asp:BoundField DataField="mat_costoT" HeaderText="Costo Total" />
                             <asp:BoundField DataField="mat_total" HeaderText="Total" />
-                            <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
+                            <asp:CommandField ButtonType="Button" SelectText="Devolución" ShowSelectButton="True" />
+                            <asp:CommandField ButtonType="Button" ShowDeleteButton="True">
+                                <ControlStyle BackColor="Red" ForeColor="White" />
+                            </asp:CommandField>
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

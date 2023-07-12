@@ -11,10 +11,10 @@ namespace parqueo
     public class Acc
     {
         AccesoDatos conectar = new AccesoDatos("enci");
-       public DataSet Usuario()
+        public DataSet Usuario()
         {
-            conectar.Conectar();  
-           // conectar.CrearComando("SP_SELECT_CLIENTE");
+            conectar.Conectar();
+            // conectar.CrearComando("SP_SELECT_CLIENTE");
             //conectar.AsignarParametros("USUARIO", strUsuario, DbType.String);
             //conectar.AsignarParametros("CLAVE", strClave, DbType.String);
             DataSet dsDatos = conectar.EjecutarDataset();
@@ -23,7 +23,7 @@ namespace parqueo
         }
 
         //REFISTRAMOS EL USUARIO PARA LOGIN
-        public DataSet registrarUsuario(int intEstado, string strNombre, string strUsuario, string strContrasena )
+        public DataSet registrarUsuario(int intEstado, string strNombre, string strUsuario, string strContrasena)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_INSERT_USUARIO");
@@ -36,9 +36,9 @@ namespace parqueo
             return dsDatos;
         }
 
-        
+
         //VERIFICAMOS SI EL USUSARIO EXISTE
-        public DataSet verificarUs(string strUsuario, string  strClave)
+        public DataSet verificarUs(string strUsuario, string strClave)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_SELECT_USUARIO");
@@ -113,7 +113,7 @@ namespace parqueo
 
         //***************************************************ORDEN DE PEDIDO******************************
 
-        public DataSet insertarPedido(int intId,int intEstado, string fechaIngreso, string fechaFinal, int intIdCliente, int intIdUsuario)
+        public DataSet insertarPedido(int intId, int intEstado, string fechaIngreso, string fechaFinal, int intIdCliente, int intIdUsuario)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_INSERT_ORDEN_PEDIDO");
@@ -122,21 +122,21 @@ namespace parqueo
             conectar.AsignarParametros("fechaIngreso", fechaIngreso, DbType.String);
             conectar.AsignarParametros("fechaFinal", fechaFinal, DbType.String);
             conectar.AsignarParametros("idCliente", intIdCliente.ToString(), DbType.Int32);
-            conectar.AsignarParametros("idUsuario", intIdUsuario.ToString(), DbType.Int32);            
+            conectar.AsignarParametros("idUsuario", intIdUsuario.ToString(), DbType.Int32);
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;
         }
 
 
-        public DataSet actualizarPedido(int intId,string fechaIngreso, string fechaFinal, int intIdCliente)
+        public DataSet actualizarPedido(int intId, string fechaIngreso, string fechaFinal, int intIdCliente)
         {
             conectar.Conectar();
-            conectar.CrearComando("SP_UPDATE_ORDEN_PEDIDO");                      
+            conectar.CrearComando("SP_UPDATE_ORDEN_PEDIDO");
             conectar.AsignarParametros("fechaIngreso", fechaIngreso, DbType.String);
             conectar.AsignarParametros("fechaFinal", fechaFinal, DbType.String);
             conectar.AsignarParametros("idCliente", intIdCliente.ToString(), DbType.Int32);
-            conectar.AsignarParametros("id", intId.ToString(), DbType.Int32);            
+            conectar.AsignarParametros("id", intId.ToString(), DbType.Int32);
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;
@@ -171,11 +171,11 @@ namespace parqueo
             return dsDatos;
         }
 
-        public DataSet ObtenerMatProductoId(int intId)
+        public DataSet ObtenerMatProductoId(int prod_id)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_SELECT_MAT_PRODUCTO_ID");
-            conectar.AsignarParametros("proid", intId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("proid", prod_id.ToString(), DbType.Int32);
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;
@@ -249,6 +249,40 @@ namespace parqueo
             return dsDatos;
         }
 
+        public DataSet obtenerMatPedido(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_MATERIAL_ID");
+            conectar.AsignarParametros("opmid", id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet deletePedidoMat(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_DELETE_ORDEN_PEDIDO");
+            conectar.AsignarParametros("opmid", id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+
+
+        public DataSet updatePedidoMat(double cantidad, int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATE_ORDEN_PEDIDO_MAT");
+            conectar.AsignarParametros("cantidad", cantidad.ToString(), DbType.Double);
+            conectar.AsignarParametros("opmid", id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+
         //***************************************************PROVEEDORES******************************
 
         //OBTENEMOS TODOS LOS PROVEEDORES PARA EL GRID
@@ -304,7 +338,7 @@ namespace parqueo
         }
 
 
-     
+
 
         //ELIMINAMOS LOS PROVEEDORES POR ID
         public DataSet EliminarProveedor(int Id)
@@ -318,7 +352,7 @@ namespace parqueo
         }
         //***************************************************COMPRAS******************************
 
-        public DataSet insertarCompras(int provId, int codigo, int matId, string fecha, double cantidad, double costoU, double iva, double costoUT, double costoT, int auto)
+        public DataSet insertarCompras(int provId, int codigo, int matId, string fecha, double cantidad, double costoU, int iva, double costoUT, double costoT, int auto)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_INSERT_COMPRAS");
@@ -328,7 +362,7 @@ namespace parqueo
             conectar.AsignarParametros("fecha", fecha, DbType.String);
             conectar.AsignarParametros("cantidad", cantidad.ToString(), DbType.Double);
             conectar.AsignarParametros("costoU", costoU.ToString(), DbType.Double);
-            conectar.AsignarParametros("iva", iva.ToString(), DbType.Double);
+            conectar.AsignarParametros("iva", iva.ToString(), DbType.Int32);
             conectar.AsignarParametros("costoUT", costoUT.ToString(), DbType.Double);
             conectar.AsignarParametros("costoT", costoT.ToString(), DbType.Double);
             conectar.AsignarParametros("auto", auto.ToString(), DbType.Int32);
@@ -346,6 +380,16 @@ namespace parqueo
             return dsDatos;
         }
 
+        public DataSet ObtenerComprasId(int Id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_COMPRAS_ID");
+            conectar.AsignarParametros("I_COM_ID", Id.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
         public DataSet eliminarCompras(int id)
         {
             conectar.Conectar();
@@ -356,20 +400,21 @@ namespace parqueo
 
             return dsDatos;
         }
-        public DataSet actualizarCompras(String fechaC, int provId, int autoC, int matId, int clasificacion, double cantidad, double costoU, double costoUT, int total, int id)
+        public DataSet actualizarCompras(int id, int provId, int clasificacion, int matId, String fechaC, double cantidad, double costoU, int iva, double costoUT, double total, int autorizacion)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_UPDATE_COMPRAS");
-            conectar.AsignarParametros("fechaC", fechaC,DbType.String);
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
             conectar.AsignarParametros("provId", provId.ToString(), DbType.Int32);
-            conectar.AsignarParametros("autoC", autoC.ToString(), DbType.Int32);
-            conectar.AsignarParametros("matId", matId.ToString(), DbType.Int32);
             conectar.AsignarParametros("clasificacion", clasificacion.ToString(), DbType.Int32);
+            conectar.AsignarParametros("matId", matId.ToString(), DbType.Int32);
+            conectar.AsignarParametros("fechaC", fechaC, DbType.String);
             conectar.AsignarParametros("cantidad", cantidad.ToString(), DbType.Double);
             conectar.AsignarParametros("costoU", costoU.ToString(), DbType.Double);
+            conectar.AsignarParametros("iva", iva.ToString(), DbType.Int32);
             conectar.AsignarParametros("costoUT", costoUT.ToString(), DbType.Double);
             conectar.AsignarParametros("total", total.ToString(), DbType.Double);
-            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+            conectar.AsignarParametros("autorizacion", autorizacion.ToString(), DbType.Int32);
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;
@@ -378,7 +423,7 @@ namespace parqueo
         public DataSet registrarMateriales(int provId, string detalle, int estado)
         {
             conectar.Conectar();
-            conectar.CrearComando("SP_INSERT_MATERIALES");  
+            conectar.CrearComando("SP_INSERT_MATERIALES");
             conectar.AsignarParametros("provId", provId.ToString(), DbType.Int32);
             conectar.AsignarParametros("detalle", detalle, DbType.String);
             conectar.AsignarParametros("estado", estado.ToString(), DbType.Int32);
@@ -438,7 +483,7 @@ namespace parqueo
         public DataSet actualizarMateriales(int intProvId, int proId, string strDetalle, string strAutorizacion, double dblCantidad, double dblCostoU, double dblCostoT, double dblTotal, int intMatIva, int intId)
         {
             conectar.Conectar();
-            conectar.CrearComando("SP_UPDATE_MATERIAL");            
+            conectar.CrearComando("SP_UPDATE_MATERIAL");
             conectar.AsignarParametros("provId", intProvId.ToString(), DbType.Int32);
             conectar.AsignarParametros("proId", proId.ToString(), DbType.Int32);
             conectar.AsignarParametros("detalle", strDetalle, DbType.String);
@@ -494,15 +539,6 @@ namespace parqueo
             return dsDatos;
         }
 
-        public DataSet ObtenerMaterialId(int Id)
-        {
-            conectar.Conectar();
-            conectar.CrearComando("SP_SELECT_MATERIALES_ID");
-            conectar.AsignarParametros("id", Id.ToString(), DbType.Int32);
-            DataSet dsDatos = conectar.EjecutarDataset();
-            conectar.Desconectar();
-            return dsDatos;
-        }
 
         public DataSet ItemsCatalogo(string strCodigo)
         {
@@ -593,12 +629,23 @@ namespace parqueo
             return dsDatos;
         }
 
+        public DataSet obtenerKardexMat(int id, int idProv)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_ENTRADA_KDX_MATERIAL");
+            conectar.AsignarParametros("matId", id.ToString(), DbType.Int32);
+            conectar.AsignarParametros("provid", idProv.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
 
+        
         public void insertarComprasKardex(int I_MAT_ID, int I_OPM_ID, int I_PROV_ID, string I_KDX_FECHACOMPRA, double I_KDX_ENTRADACANT, double I_KDX_ENTRADAPRECIOU, int I_KDX_ESTADO)
         {
             try
             {
-                
+
                 conectar.Conectar();
                 conectar.CrearComando("SP_INSERT_COMPRA_KARDEX");
                 conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
@@ -611,7 +658,7 @@ namespace parqueo
                 conectar.EjecutarDataset();
                 conectar.Desconectar();
             }
-           catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
@@ -628,7 +675,7 @@ namespace parqueo
             conectar.AsignarParametros("fechaI", fechaI, DbType.String);
             conectar.AsignarParametros("fechaF", fechaF, DbType.String);
             DataSet dsDatos = conectar.EjecutarDataset();
-            conectar.Desconectar(); 
+            conectar.Desconectar();
             return dsDatos;
         }
 
@@ -654,12 +701,33 @@ namespace parqueo
             return dsDatos;
         }
 
+        public DataSet PrecioUnitarioExistencia(int I_MAT_ID, int I_PROV_ID)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_MAX_PUNIT_MATERIAL");
+            conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
+            conectar.AsignarParametros("I_PROV_ID", I_PROV_ID.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
         public DataSet VerificarMaterial(int I_MAT_ID, int I_PROV_ID)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_SELECT_VERIFICA_MATERIAL");
             conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
             conectar.AsignarParametros("I_PROV_ID", I_PROV_ID.ToString(), DbType.Int32);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet ProveedorMaterial(int I_MAT_ID)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_PROVEEDOR_MATERIAL");
+            conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;
@@ -675,6 +743,21 @@ namespace parqueo
             conectar.AsignarParametros("I_KDX_FECHACOMPRA", I_KDX_FECHACOMPRA, DbType.Date);
             conectar.AsignarParametros("I_KDX_ENTRADACANT", I_KDX_ENTRADACANT.ToString(), DbType.Double);
             conectar.AsignarParametros("I_KDX_ENTRADAPRECIOU", I_KDX_ENTRADAPRECIOU.ToString(), DbType.Double);
+            conectar.AsignarParametros("I_KDX_EXISTCANT", I_KDX_EXISTCANT.ToString(), DbType.Double);
+            conectar.AsignarParametros("I_KDX_EXISTPRECIOU", I_KDX_EXISTPRECIOU.ToString(), DbType.Double);
+            conectar.EjecutarDataset();
+            conectar.Desconectar();
+        }
+        public void InsertarKardexSalida(int I_MAT_ID, int I_OPM_ID, int I_PROV_ID, string I_FECHA_SALIDA, double I_KDX_SALIDACANT, double I_KDX_SALIDAPRECIOU, double I_KDX_EXISTCANT, double I_KDX_EXISTPRECIOU)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INSERT_KARDEX_SALIDA");
+            conectar.AsignarParametros("I_MAT_ID", I_MAT_ID.ToString(), DbType.Int32);
+            conectar.AsignarParametros("I_OPM_ID", I_OPM_ID.ToString(), DbType.Int32);
+            conectar.AsignarParametros("I_PROV_ID", I_PROV_ID.ToString(), DbType.Int32);
+            conectar.AsignarParametros("I_FECHA_SALIDA", I_FECHA_SALIDA, DbType.Date);
+            conectar.AsignarParametros("I_KDX_SALIDACANT", I_KDX_SALIDACANT.ToString(), DbType.Double);
+            conectar.AsignarParametros("I_KDX_SALIDAPRECIOU", I_KDX_SALIDAPRECIOU.ToString(), DbType.Double);
             conectar.AsignarParametros("I_KDX_EXISTCANT", I_KDX_EXISTCANT.ToString(), DbType.Double);
             conectar.AsignarParametros("I_KDX_EXISTPRECIOU", I_KDX_EXISTPRECIOU.ToString(), DbType.Double);
             conectar.EjecutarDataset();

@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography;
 using MySqlX.XDevAPI.Relational;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace parqueo
 {
@@ -113,14 +114,18 @@ namespace parqueo
                     {
                         txtRuc.Text = dsProveedorId.Tables[0].Rows[0]["prov_ruc"].ToString();
                     }
-                    if (dsMatId.Tables[0].Rows.Count>0)
+                    if (dsMatId.Tables[0].Rows.Count > 0)
                     {
                         listMaterial.DataSource = dsMatId.Tables[0];
                         listMaterial.DataTextField = "mat_detalle";
                         listMaterial.DataValueField = "mat_id";
                         listMaterial.DataBind();
                         this.listMaterial.Items.Insert(0, "[Seleccione]");
-
+                    }
+                    else
+                    {
+                        this.listMaterial.Items.Insert(0, "[Seleccione]");
+                        MsgBox("alert", "No existe Materiales con el Proveedor seleccionado ... ");
                     }
                 }
                 else
@@ -151,7 +156,7 @@ namespace parqueo
                 listClasificacion.SelectedIndex = -1;
                 txtCantidad.Text = "0";
                 txtCostoUnidad.Text = "0";
-                //txtSubtotal.Text = "";
+                txtSubtotal.Text = "0";
                 listIva.SelectedIndex = -1;
                 txtTotal.Text = "";
 
@@ -195,7 +200,7 @@ namespace parqueo
                         Double cantidad = Double.Parse(txtCantidad.Text);
                         Double costoUnitario = Double.Parse(txtCostoUnidad.Text);
                         Double subtotal = cantidad * costoUnitario;
-                        Double total = (subtotal * Double.Parse(listIva.SelectedItem.Text)) + subtotal;
+                        Double total = (subtotal * (Double.Parse(listIva.SelectedItem.Text) / 100)) + subtotal;
 
                         //txtSubtotal.Text = subtotal.ToString();
                         txtTotal.Text = total.ToString();
@@ -273,119 +278,168 @@ namespace parqueo
             {
                 double cantidad, precioU, cantidadE, precioTE, precioUE;
                 string cant, precU;
-                if (listProveedor.SelectedValue == "[Seleccione]")
-                {
-                    lblErrorProveedor.Visible = true;
-                }
-                else if (listProveedor.SelectedValue != "[Seleccione]")
-                {
-                    lblErrorProveedor.Visible = false;
-                }
+                //if (listProveedor.SelectedValue == "[Seleccione]")
+                //{
+                //    lblErrorProveedor.Visible = true;
+                //}
+                //else if (listProveedor.SelectedValue != "[Seleccione]")
+                //{
+                //    lblErrorProveedor.Visible = false;
+                //}
 
-                if (txtAut.Text == "")
-                {
-                    lblErrorAutori.Visible = true;
-                }
-                else if (txtAut.Text != "")
-                {
-                    lblErrorAutori.Visible = false;
-                }
-                if (listClasificacion.SelectedValue == "[Seleccione]")
-                {
-                    lblErrorCaracteristica.Visible = true;
-                }
-                else if (listClasificacion.SelectedValue != "[Seleccione]")
-                {
-                    lblErrorCaracteristica.Visible = false;
-                }
+                //if (txtAut.Text == "")
+                //{
+                //    lblErrorAutori.Visible = true;
+                //}
+                //else if (txtAut.Text != "")
+                //{
+                //    lblErrorAutori.Visible = false;
+                //}
+                //if (listClasificacion.SelectedValue == "[Seleccione]")
+                //{
+                //    lblErrorCaracteristica.Visible = true;
+                //}
+                //else if (listClasificacion.SelectedValue != "[Seleccione]")
+                //{
+                //    lblErrorCaracteristica.Visible = false;
+                //}
 
-                if (listIva.SelectedValue == "[Seleccione]")
-                {
-                    lblErrorIva.Visible = true;
-                }
-                else if (listIva.SelectedValue != "[Seleccione]")
-                {
-                    lblErrorIva.Visible = false;
-                }
-
-
-                double calculoIva;
-                if (listIva.SelectedItem.Text == "0")
-                {
-                    calculoIva = double.Parse(txtCostoUnidad.Text);
-                }
-                else
-                {
-                    calculoIva = Math.Round((double.Parse(listIva.SelectedItem.Text) * double.Parse(txtCostoUnidad.Text)) + double.Parse(txtCostoUnidad.Text), 4);
-                }
+                //if (listIva.SelectedValue == "[Seleccione]")
+                //{
+                //    lblErrorIva.Visible = true;
+                //}
+                //else if (listIva.SelectedValue != "[Seleccione]")
+                //{
+                //    lblErrorIva.Visible = false;
+                //}
 
 
-                lblIdProveedor.Text = listProveedor.SelectedValue.ToString();
-                lblIdMaterial.Text = listMaterial.SelectedValue.ToString();
-                lblIdClasificacion.Text = listClasificacion.SelectedValue.ToString();
-                lblIdIva.Text = listIva.SelectedItem.ToString();
-                //INSERCION A COMPRAS
-                datos.insertarCompras(Int32.Parse(lblIdProveedor.Text), Int32.Parse(lblIdClasificacion.Text),
-                Int32.Parse(lblIdMaterial.Text), txtFechaEntrada.Text, double.Parse(txtCantidad.Text), double.Parse(txtCostoUnidad.Text), double.Parse(lblIdIva.Text),
-                double.Parse(txtSubtotal.Text), double.Parse(txtTotal.Text), Int32.Parse(txtAut.Text));
-                cargarCompras();
-
-
-
-                //INSERCION AL KARDEX
-                DataSet dsVerificar = datos.VerificarMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(listProveedor.SelectedValue));
-                if (int.Parse(dsVerificar.Tables[0].Rows[0]["KDX_ID"].ToString()) > 0)
+                if (btnIngresarMaterial.Text == "Actualizar")
                 {
-                    DataSet dsCantidad = datos.CantidadMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(listProveedor.SelectedValue));
-                    DataSet dsPrecioUNitario = datos.PrecioUnitarioMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(listProveedor.SelectedValue));
-                    cantidadE = double.Parse(dsCantidad.Tables[0].Rows[0]["Cantidad"].ToString());
-                    precioTE = double.Parse(dsPrecioUNitario.Tables[0].Rows[0]["Total"].ToString());
-                    cantidad = double.Parse(txtCantidad.Text);
-                    precioU = double.Parse(txtCostoUnidad.Text);
-                    precioUE = ((cantidad * precioU) + precioTE) / (cantidad + cantidadE);
-                    datos.InsertarKardex(Int32.Parse(listMaterial.SelectedValue), -1, Int32.Parse(lblIdProveedor.Text), txtFechaEntrada.Text, cantidad, precioU, cantidad+cantidadE, Math.Round(precioUE, 4));
+                    if (listIva.SelectedValue == "[Seleccione]")
+                    {
+                        lblErrorIva.Visible = true;
+                    }
+                    else
+                    {
+                        DataSet dsCompras = datos.actualizarCompras(Int32.Parse(lblIdCompra.Text), Int32.Parse(listProveedor.SelectedValue), Int32.Parse(listClasificacion.SelectedValue),
+                   Int32.Parse(listMaterial.SelectedValue), txtFechaEntrada.Text, double.Parse(txtCantidad.Text), double.Parse(txtCostoUnidad.Text), int.Parse(listIva.SelectedValue), double.Parse(txtSubtotal.Text),
+                   double.Parse(txtTotal.Text), int.Parse(txtAut.Text));
+
+
+                        cargarCompras();
+
+
+                        listProveedor.SelectedIndex = -1;
+                        txtRuc.Text = "";
+                        txtAut.Text = "";
+                        listClasificacion.SelectedIndex = -1;
+                        txtCantidad.Text = "0";
+                        txtCostoUnidad.Text = "0";
+                        txtSubtotal.Text = "0";
+                        listIva.SelectedIndex = -1;
+                        txtTotal.Text = "";
+                        txtFechaEntrada.Text = "";
+
+                    }
 
                 }
                 else
                 {
-                    cant = txtCantidad.Text;
-                    precU = txtCostoUnidad.Text;
-                    cantidad = double.Parse(txtCantidad.Text);
-                    precioU = double.Parse(txtCostoUnidad.Text);
-                    datos.InsertarKardex(Int32.Parse(listMaterial.SelectedValue), -1, Int32.Parse(lblIdProveedor.Text), txtFechaEntrada.Text, cantidad, precioU, cantidad, precioU);
-                    //double.Parse(cant.Replace('.', ','))
-                    //double.Parse(precU.Replace('.', ','))
+
+                    if (listIva.SelectedValue == "[Seleccione]")
+                    {
+                        lblErrorIva.Visible = true;
+                    }
+                    else
+                    {
+
+                        double calculoIva;
+                        if (listIva.SelectedItem.Text == "0")
+                        {
+                            calculoIva = double.Parse(txtCostoUnidad.Text);
+                        }
+                        else
+                        {
+                            calculoIva = Math.Round((double.Parse(listIva.SelectedItem.Text) * double.Parse(txtCostoUnidad.Text)) + double.Parse(txtCostoUnidad.Text), 4);
+                        }
+
+
+                        lblIdProveedor.Text = listProveedor.SelectedValue.ToString();
+                        lblIdMaterial.Text = listMaterial.SelectedValue.ToString();
+                        lblIdClasificacion.Text = listClasificacion.SelectedValue.ToString();
+                        lblIdIva.Text = listIva.SelectedValue.ToString();
+                        //INSERCION A COMPRAS
+                        datos.insertarCompras(Int32.Parse(lblIdProveedor.Text), Int32.Parse(lblIdClasificacion.Text),
+                        Int32.Parse(lblIdMaterial.Text), txtFechaEntrada.Text, double.Parse(txtCantidad.Text), double.Parse(txtCostoUnidad.Text), Int32.Parse(lblIdIva.Text),
+                        double.Parse(txtSubtotal.Text), double.Parse(txtTotal.Text), Int32.Parse(txtAut.Text));
+                        cargarCompras();
+
+                        //INSERCION AL KARDEX
+                        DataSet dsVerificar = datos.VerificarMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(listProveedor.SelectedValue));
+                        if (int.Parse(dsVerificar.Tables[0].Rows[0]["KDX_ID"].ToString()) > 0)
+                        {
+                            DataSet dsCantidad = datos.CantidadMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(listProveedor.SelectedValue));
+                            DataSet dsPrecioUNitario = datos.PrecioUnitarioMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(listProveedor.SelectedValue));
+                            cantidadE = double.Parse(dsCantidad.Tables[0].Rows[0]["Cantidad"].ToString());
+                            precioTE = double.Parse(dsPrecioUNitario.Tables[0].Rows[0]["Total"].ToString());
+                            cantidad = double.Parse(txtCantidad.Text);
+                            precioU = double.Parse(txtSubtotal.Text);
+                            precioUE = ((cantidad * precioU) + precioTE) / (cantidad + cantidadE);
+                            datos.InsertarKardex(Int32.Parse(listMaterial.SelectedValue), -1, Int32.Parse(lblIdProveedor.Text), txtFechaEntrada.Text, cantidad, precioU, cantidad + cantidadE, Math.Round(precioUE, 4));
+
+                        }
+                        else
+                        {
+                            cant = txtCantidad.Text;
+                            precU = txtSubtotal.Text;
+                            cantidad = double.Parse(txtCantidad.Text);
+                            precioU = double.Parse(txtSubtotal.Text);
+                            datos.InsertarKardex(Int32.Parse(listMaterial.SelectedValue), -1, Int32.Parse(lblIdProveedor.Text), txtFechaEntrada.Text, cantidad, precioU, cantidad, precioU);
+                            //double.Parse(cant.Replace('.', ','))
+                            //double.Parse(precU.Replace('.', ','))
+
+                        }
+
+
+                        listProveedor.SelectedIndex = -1;
+                        txtRuc.Text = "";
+                        txtAut.Text = "";
+                        listClasificacion.SelectedIndex = -1;
+                        txtCantidad.Text = "0";
+                        txtCostoUnidad.Text = "0";
+                        txtSubtotal.Text = "0";
+                        listIva.SelectedIndex = -1;
+                        txtTotal.Text = "";
+                        txtFechaEntrada.Text = "";
+
+                    }
+
 
                 }
-                
-               
+
+
+
+
                 //datos.insertarKardex(Int32.Parse(lblIdMaterial.Text), -1, Int32.Parse(lblIdProveedor.Text), txtFechaEntrada.Text, Int32.Parse(txtCantidad.Text), double.Parse(txtCostoUnidad.Text), 1);
 
 
                 //if (listProveedor.SelectedValue != "[Seleccione]" && txtAut.Text != "" && txtDetalle.Text != "" && listClasificacion.SelectedValue != "[Seleccione]" && txtSubtotal.Text != "" && txtTotal.Text != "" && listIva.SelectedValue != "[Seleccione]")
                 //{
 
-                //    if (btnIngresarMaterial.Text == "Actualizar")
-                //    {
-                //        DataSet dsDatos = datos.actualizarMateriales(Int32.Parse(listProveedor.SelectedValue), Int32.Parse(listClasificacion.SelectedValue), txtDetalle.Text, txtAut.Text, Double.Parse(txtCantidad.Text),
-                //        Double.Parse(txtCostoUnidad.Text), Double.Parse(txtSubtotal.Text), Double.Parse(txtTotal.Text), int.Parse(listIva.SelectedValue), int.Parse(lblIdMaterial.Text));
-                //        CargarMaterial();
 
-                //    }
-                //    else
-                //    {
-                //        DateTime fechaact = DateTime.Parse(DateTime.Now.ToShortDateString());
-                //        fechaact.ToString("yyyy-MM-dd");
-                //        string[] fechac = fechaact.ToString().Split('/');
-                //        string fecha = fechac[2].Substring(0, 4) + "-" + fechac[1] + "-" + fechac[0];
-                //        // lblFechaExp.Text = fechaact.ToString("yyyy-MM-dd");
+                //else
+                //{
+                //    DateTime fechaact = DateTime.Parse(DateTime.Now.ToShortDateString());
+                //    fechaact.ToString("yyyy-MM-dd");
+                //    string[] fechac = fechaact.ToString().Split('/');
+                //    string fecha = fechac[2].Substring(0, 4) + "-" + fechac[1] + "-" + fechac[0];
+                //    // lblFechaExp.Text = fechaact.ToString("yyyy-MM-dd");
 
-
-
-                //        //DataSet dsDatos = datos.registrarMateriales(Int32.Parse(lblIdProveedor.Text), Int32.Parse(lblIdClasificacion.Text), txtDetalle.Text, txtAut.Text, 
-                //        //Double.Parse(txtCantidad.Text), Double.Parse(txtCostoUnidad.Text), Double.Parse(txtSubtotal.Text), Double.Parse(txtTotal.Text), 1, int.Parse(listIva.SelectedValue), fecha);
-                //        CargarMaterial();
-                //    }
+                //    //DataSet dsDatos = datos.registrarMateriales(Int32.Parse(lblIdProveedor.Text), Int32.Parse(lblIdClasificacion.Text), txtDetalle.Text, txtAut.Text, 
+                //    //Double.Parse(txtCantidad.Text), Double.Parse(txtCostoUnidad.Text), Double.Parse(txtSubtotal.Text), Double.Parse(txtTotal.Text), 1, int.Parse(listIva.SelectedValue), fecha);
+                //    CargarMaterial();
+                //}
 
 
                 //}
@@ -396,7 +450,6 @@ namespace parqueo
                 MsgBox("alert", "UPS, algo ha pasado por facor revise que los campos esten correctos");
             }
         }
-
 
 
         protected void MsgBox(string v_tipo_msg, string v_msg)
@@ -413,10 +466,10 @@ namespace parqueo
                 lblIdIva.Text = listIva.SelectedValue.ToString();
                 lblErrorIva.Visible = false;
                 costoU = Double.Parse(txtCostoUnidad.Text);
-                
+
                 if (txtCostoUnidad.Text != "")
                 {
-                    if (double.Parse(listIva.SelectedItem.Text)  != 0)
+                    if (double.Parse(listIva.SelectedItem.Text) != 0)
                     {
                         DataSet dsIva = datos.SacarCodigoIva(Int32.Parse(lblIdIva.Text));
                         Double dblIva = Double.Parse(dsIva.Tables[0].Rows[0]["itc_codigo"].ToString());
@@ -491,21 +544,40 @@ namespace parqueo
             {
                 btnIngresarMaterial.Text = "Actualizar";
                 int IdMaterial = int.Parse(((Label)grdMateriales.Rows[e.NewSelectedIndex].FindControl("lblMaterialId")).Text);
-                lblIdMaterial.Text = IdMaterial.ToString();
-                DataSet dsMaterialId = datos.ObtenerMaterialId(IdMaterial);
+                lblIdCompra.Text = IdMaterial.ToString();
+                DataSet dsMaterialId = datos.ObtenerComprasId(IdMaterial);
 
                 if (dsMaterialId.Tables[0].Rows.Count > 0)
                 {
+                    lblIdProveedor.Text = dsMaterialId.Tables[0].Rows[0]["prov_id"].ToString();
+
+
+                    DataSet dsMatId = datos.obtenerMaterialRegistradoProveedor(Int32.Parse(lblIdProveedor.Text));
+
+                    if (dsMatId.Tables[0].Rows.Count > 0)
+                    {
+                        listMaterial.DataSource = dsMatId.Tables[0];
+                        listMaterial.DataTextField = "mat_detalle";
+                        listMaterial.DataValueField = "mat_id";
+                        listMaterial.DataBind();
+                        this.listMaterial.Items.Insert(0, "[Seleccione]");
+
+                    }
+
                     listProveedor.SelectedValue = dsMaterialId.Tables[0].Rows[0]["prov_id"].ToString();
                     txtRuc.Text = dsMaterialId.Tables[0].Rows[0]["ruc"].ToString();
+                    listMaterial.SelectedValue = dsMaterialId.Tables[0].Rows[0]["mat_id"].ToString();
                     txtAut.Text = dsMaterialId.Tables[0].Rows[0]["autorizacion"].ToString();
-                    listMaterial.SelectedValue = dsMaterialId.Tables[0].Rows[0]["detalle"].ToString();
-                    listClasificacion.SelectedValue = dsMaterialId.Tables[0].Rows[0]["cla_id"].ToString();
                     txtCantidad.Text = dsMaterialId.Tables[0].Rows[0]["cantidad"].ToString();
                     txtCostoUnidad.Text = dsMaterialId.Tables[0].Rows[0]["costo_unitario"].ToString();
-                    txtSubtotal.Text = dsMaterialId.Tables[0].Rows[0]["costo_total"].ToString();
-                    listIva.SelectedValue = dsMaterialId.Tables[0].Rows[0]["iva_id"].ToString();
-                    txtTotal.Text = dsMaterialId.Tables[0].Rows[0]["total"].ToString();
+                    listIva.SelectedIndex = -1;
+                    txtSubtotal.Text = dsMaterialId.Tables[0].Rows[0]["costo_unitario_iva"].ToString();
+                    txtTotal.Text = dsMaterialId.Tables[0].Rows[0]["costo_total"].ToString();
+                    //DAMOS  FORMATO A LA FECHA PARA CARGARLA EN EL INPUT
+                    DateTime dt5 = DateTime.Parse(dsMaterialId.Tables[0].Rows[0]["com_fecha"].ToString());
+                    txtFechaEntrada.Text = dt5.ToString("yyyy-MM-dd");
+                    listClasificacion.SelectedValue = dsMaterialId.Tables[0].Rows[0]["itc_id"].ToString();
+
                 }
 
 

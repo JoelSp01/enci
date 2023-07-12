@@ -13,7 +13,7 @@ namespace parqueo
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
-
+        
         Acc datos = new Acc();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,6 +51,7 @@ namespace parqueo
                     listCliente.DataValueField = "CLI_ID";
                     listCliente.DataBind();
                     this.listCliente.Items.Insert(0, "[Seleccione]");
+                    //this.listCliente.Items.Insert(1, "Otro");
                 }
 
             }
@@ -198,6 +199,7 @@ namespace parqueo
                 lblIdCLiente.Text = listCliente.SelectedValue.ToString();
                 if (lblIdCLiente.Text != "[Seleccione]")
                 {
+
                     DataSet dsClietneId = datos.ObtenerClienteId(Int32.Parse(lblIdCLiente.Text));
                     if (dsClietneId.Tables[0].Rows.Count > 0)
                     {
@@ -306,18 +308,18 @@ namespace parqueo
             //{
             DataSet dsMatProductoId = datos.ObtenerMatProductoId(int.Parse(lblIdPedido.Text));
             string x = dsMatProductoId.Tables[0].Rows[0].ToString();
-       if (dsMatProductoId.Tables[0].Rows.Count > 0)
+            if (dsMatProductoId.Tables[0].Rows.Count > 0)
             {
                 grdMaterial.Visible = true;
                 grdMaterial.DataSource = dsMatProductoId.Tables[0];
                 grdMaterial.DataBind();
-                PanelMaterial.Visible = true;
+                //PanelMaterial.Visible = true;
             }
             else
             {
                 grdMaterial.DataSource = "";
                 grdMaterial.DataBind();
-                PanelMaterial.Visible = false;
+                //PanelMaterial.Visible = false;
             }
             //}
             //else
@@ -469,6 +471,7 @@ namespace parqueo
             {
                 CargarMateriales();
                 PanelMaterial.Visible = true;
+                PanelGridMaterial.Visible = true;
             }
             catch (Exception)
             {
@@ -480,36 +483,141 @@ namespace parqueo
         {
             try
             {
-                if (lblIdProducto.Text != "0")
+                double cantidad, precioU, cantidadE, precioTE, precioUE;
+                string cant, precU;
+
+
+                if (btnAgMat.Text == "Devolver")
                 {
-                    if (listMaterial.SelectedItem.Text != "[Seleccione]")
+                    if (double.Parse(cantMaterial.Text) > double.Parse(lblCantMatPed.Text))
                     {
+                        MsgBox("alert", "Por favor ingrese una cantidad correcta. Existe solo:" + double.Parse(lblCantMatPed.Text));
+
+                    }
+                    else if (double.Parse(cantMaterial.Text) == double.Parse(lblCantMatPed.Text))
+                    {
+                        datos.deletePedidoMat(int.Parse(lblIdMatPed.Text));
+                        DataSet dsProveedorID = datos.ProveedorMaterial(int.Parse(lblIdMatPed.Text));
                         DateTime fechaact = DateTime.Parse(DateTime.Now.ToShortDateString());
                         fechaact.ToString("yyyy-MM-dd");
                         string[] fechac = fechaact.ToString().Split('/');
                         string fecha = fechac[2].Substring(0, 4) + "-" + fechac[1] + "-" + fechac[0];
-                        // lblFechaExp.Text = fechaact.ToString("yyyy-MM-dd");
 
-                        datos.insertarPedProMat(int.Parse(Session["IdProd"].ToString()), int.Parse(listMaterial.SelectedValue), double.Parse(cantMaterial.Text));
-                        cargarMatProductoId();
-                        lblErrorMaterial.Visible = false;
-                        listMaterial.SelectedIndex = -1;
-                        PanelGridMaterial.Visible = true;
+                        DataSet dsCantidadMaterial = datos.CantidadMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                        DataSet dsPrecioUnitarioExistencia = datos.PrecioUnitarioExistencia(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                        DataSet dsPrecioUNitario = datos.PrecioUnitarioMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                        cantidadE = double.Parse(dsCantidadMaterial.Tables[0].Rows[0]["Cantidad"].ToString());
+                        precioTE = double.Parse(dsPrecioUNitario.Tables[0].Rows[0]["Total"].ToString());
+                        cantidad = double.Parse(cantMaterial.Text);
+                        precioU = double.Parse(dsPrecioUnitarioExistencia.Tables[0].Rows[0]["TOTAL"].ToString());
+                        precioUE = ((cantidad * precioU) + precioTE) / (cantidadE + cantidad);
+
+
+                        datos.InsertarKardex(Int32.Parse(listMaterial.SelectedValue), -2, Int32.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()),
+                        fecha, cantidad, precioU, cantidad + cantidadE, Math.Round(precioUE, 4));
 
                     }
                     else
                     {
-                        lblErrorMaterial.Text = "Debe seleccionar un Material";
-                        lblErrorMaterial.Visible = true;
+                        datos.updatePedidoMat((double.Parse(lblCantMatPed.Text)-double.Parse(cantMaterial.Text)), int.Parse(lblIdMatPed.Text));
+                        DataSet dsProveedorID = datos.ProveedorMaterial(int.Parse(lblIdMatPed.Text));
+                        DateTime fechaact = DateTime.Parse(DateTime.Now.ToShortDateString());
+                        fechaact.ToString("yyyy-MM-dd");
+                        string[] fechac = fechaact.ToString().Split('/');
+                        string fecha = fechac[2].Substring(0, 4) + "-" + fechac[1] + "-" + fechac[0];
+
+                        DataSet dsCantidadMaterial = datos.CantidadMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                        DataSet dsPrecioUnitarioExistencia = datos.PrecioUnitarioExistencia(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                        DataSet dsPrecioUNitario = datos.PrecioUnitarioMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                        cantidadE = double.Parse(dsCantidadMaterial.Tables[0].Rows[0]["Cantidad"].ToString());
+                        precioTE = double.Parse(dsPrecioUNitario.Tables[0].Rows[0]["Total"].ToString());
+                        cantidad = double.Parse(cantMaterial.Text);
+                        precioU = double.Parse(dsPrecioUnitarioExistencia.Tables[0].Rows[0]["TOTAL"].ToString());
+                        precioUE = ((cantidad * precioU) + precioTE) / (cantidadE + cantidad);
+
+
+                        datos.InsertarKardex(Int32.Parse(listMaterial.SelectedValue), -2, Int32.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()),
+                        fecha, cantidad, precioU, cantidad + cantidadE, Math.Round(precioUE, 4));
+                        CargarMaterialesProducto(int.Parse(lblIdProd.Text));
                     }
-                    
                 }
                 else
                 {
-                    lblErrorMaterial.Text = "Debe seleccionar un Producto";
-                    lblErrorMaterial.Visible = true;
+
+                    if (lblIdProducto.Text != "0")
+                    {
+                        if (listMaterial.SelectedItem.Text != "[Seleccione]")
+                        {
+                            DateTime fechaact = DateTime.Parse(DateTime.Now.ToShortDateString());
+                            fechaact.ToString("yyyy-MM-dd");
+                            string[] fechac = fechaact.ToString().Split('/');
+                            string fecha = fechac[2].Substring(0, 4) + "-" + fechac[1] + "-" + fechac[0];
+                            DataSet dsProveedorID = datos.ProveedorMaterial(int.Parse(listMaterial.SelectedValue));
+                            DataSet dsCantidad = datos.CantidadMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                            if (dsCantidad.Tables[0].Rows.Count > 0)
+                            {
+                                if (double.Parse(dsCantidad.Tables[0].Rows[0]["cantidad"].ToString()) >= double.Parse(cantMaterial.Text))
+                                {
+                                    datos.insertarPedProMat(int.Parse(Session["IdProd"].ToString()), int.Parse(listMaterial.SelectedValue), double.Parse(cantMaterial.Text));
+                                    CargarMaterialesProducto(int.Parse(lblIdProducto.Text));
+                                    //INSERCION AL KARDEX COMO ORDEN DE PEDIDO
+                                    DataSet dsVerificar = datos.VerificarMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                                    if (int.Parse(dsVerificar.Tables[0].Rows[0]["KDX_ID"].ToString()) > 0)
+                                    {
+                                        DataSet dsCantidadMaterial = datos.CantidadMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                                        DataSet dsPrecioUnitarioExistencia = datos.PrecioUnitarioExistencia(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                                        DataSet dsPrecioUNitario = datos.PrecioUnitarioMaterial(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                                        cantidadE = double.Parse(dsCantidadMaterial.Tables[0].Rows[0]["Cantidad"].ToString());
+                                        precioTE = double.Parse(dsPrecioUNitario.Tables[0].Rows[0]["Total"].ToString());
+                                        cantidad = double.Parse(cantMaterial.Text);
+                                        precioU = double.Parse(dsPrecioUnitarioExistencia.Tables[0].Rows[0]["TOTAL"].ToString());
+                                        precioUE = ((cantidad * precioU) + precioTE) / (cantidadE + cantidad);
+                                        datos.InsertarKardexSalida(Int32.Parse(listMaterial.SelectedValue), int.Parse(lblIdPedido.Text), Int32.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()), txtFechaS.Text, cantidad, precioU, cantidadE - cantidad, Math.Round(precioUE, 4));
+
+                                    }
+                                    else
+                                    {
+                                        cant = cantMaterial.Text;
+                                        DataSet dsPrecioUnitarioExistencia = datos.PrecioUnitarioExistencia(Int32.Parse(listMaterial.SelectedValue), int.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()));
+                                        precU = dsPrecioUnitarioExistencia.Tables[0].Rows[0]["TOTAL"].ToString();
+                                        cantidad = double.Parse(cantMaterial.Text);
+                                        precioU = double.Parse(dsPrecioUnitarioExistencia.Tables[0].Rows[0]["TOTAL"].ToString());
+                                        datos.InsertarKardexSalida(Int32.Parse(listMaterial.SelectedValue), int.Parse(lblIdPedido.Text), Int32.Parse(dsProveedorID.Tables[0].Rows[0]["prov_id"].ToString()), txtFechaS.Text, cantidad, precioU, cantidad, precioU);
+                                        //double.Parse(cant.Replace('.', ','))
+                                        //double.Parse(precU.Replace('.', ','))
+
+                                    }
+
+                                    lblErrorMaterial.Visible = false;
+                                    listMaterial.SelectedIndex = -1;
+                                    PanelGridMaterial.Visible = true;
+                                }
+                                else
+                                {
+                                    MsgBox("alert", "No existe esa cantidad de Material. En existencia hay - " + dsCantidad.Tables[0].Rows[0]["cantidad"].ToString());
+                                }
+                            }
+                            else
+                            {
+                                MsgBox("alert", "No existe ese Material en Existencias - Kardex");
+                            }
+
+                        }
+                        else
+                        {
+                            lblErrorMaterial.Text = "Debe seleccionar un Material";
+                            lblErrorMaterial.Visible = true;
+                        }
+
+                    }
+                    else
+                    {
+                        lblErrorMaterial.Text = "Debe seleccionar un Producto";
+                        lblErrorMaterial.Visible = true;
+                    }
+
                 }
-                
+
             }
             catch (Exception)
             {
@@ -525,15 +633,34 @@ namespace parqueo
 
         protected void grdProductos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
+            lblIdProd.Text = ((Label)grdProductos.Rows[e.NewSelectedIndex].FindControl("lblMaterialId")).Text;
             int IdProducto = int.Parse(((Label)grdProductos.Rows[e.NewSelectedIndex].FindControl("lblMaterialId")).Text);
+            CargarMaterialesProducto(IdProducto);
             lblIdProducto.Text = IdProducto.ToString();
             Session["IdProd"] = IdProducto.ToString();
             lblErrorMaterial.Visible = false;
         }
 
-        protected void grdOrdenes_SelectedIndexChanged(object sender, EventArgs e)
+        protected void CargarMaterialesProducto(int ProdId)
         {
+            try
+            {
+                DataSet dsMaterialesProducto = datos.ObtenerMatProductoId(ProdId);
+                if (dsMaterialesProducto.Tables[0].Rows.Count > 0)
+                {
+                    grdMaterial.DataSource = dsMaterialesProducto.Tables[0];
+                    grdMaterial.DataBind();
+                }
+                else
+                {
+                    grdMaterial.DataSource = "";
+                    grdMaterial.DataBind();
+                }
+            }
+            catch (Exception)
+            {
 
+            }
         }
 
         protected void grdOrdenes_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
@@ -542,6 +669,9 @@ namespace parqueo
             {
                 btnProducto.Text = "Actualizar";
                 panelPedido.Visible = true;
+                PanelMaterial.Visible = false;
+                PanelGridMaterial.Visible = false;
+
                 int idPedidos = int.Parse(((Label)grdOrdenes.Rows[e.NewSelectedIndex].FindControl("lblOrdenId")).Text);
                 lblIdPedido.Text = idPedidos.ToString();
 
@@ -630,6 +760,26 @@ namespace parqueo
             //}
         }
 
+        protected void grdMaterial_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            int idMat = int.Parse(((Label)grdMaterial.Rows[e.NewSelectedIndex].FindControl("lblMaterialId")).Text);
+            lblIdMatPed.Text = ((Label)grdMaterial.Rows[e.NewSelectedIndex].FindControl("lblMaterialId")).Text;
+            DataSet dsMat = datos.obtenerMatPedido(idMat);
+
+            if (dsMat.Tables[0].Rows.Count > 0)
+            {
+                //REVISAR LAS FECHAS PARA CARGAR
+                string s = listMaterial.SelectedValue;
+                listMaterial.SelectedValue = dsMat.Tables[0].Rows[0]["mat_id"].ToString();
+                DateTime dt5 = DateTime.Parse(dsMat.Tables[0].Rows[0]["opm_fechaS"].ToString());
+                txtFechaS.Text = dt5.ToString("yyyy-MM-dd");
+                lblCantMatPed.Text = dsMat.Tables[0].Rows[0]["opm_cantidad"].ToString();
+                cantMaterial.Text = dsMat.Tables[0].Rows[0]["opm_cantidad"].ToString();
+                btnAgMat.Text = "Devolver";
+            }
+
+
+        }
 
     }
 }

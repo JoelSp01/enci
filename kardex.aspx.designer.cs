@@ -33,13 +33,13 @@ namespace parqueo
         protected global::System.Web.UI.WebControls.Button cerrarSesion;
 
         /// <summary>
-        /// Control lblIdProveedor.
+        /// Control lblIdMat.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdProveedor;
+        protected global::System.Web.UI.WebControls.Label lblIdMat;
 
         /// <summary>
         /// Control Label2.
@@ -60,6 +60,15 @@ namespace parqueo
         protected global::System.Web.UI.WebControls.DropDownList listProveedor;
 
         /// <summary>
+        /// Control panelMat.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelMat;
+
+        /// <summary>
         /// Control Label3.
         /// </summary>
         /// <remarks>
@@ -69,31 +78,13 @@ namespace parqueo
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control TextBox3.
+        /// Control listMaterial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
-
-        /// <summary>
-        /// Control Label4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-
-        /// <summary>
-        /// Control TextBox4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.DropDownList listMaterial;
 
         /// <summary>
         /// Control Panel1.

@@ -33,6 +33,15 @@ namespace parqueo
         protected global::System.Web.UI.WebControls.Button cerrarSesion;
 
         /// <summary>
+        /// Control lblIdProd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdProd;
+
+        /// <summary>
         /// Control lblIdCLiente.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,24 @@ namespace parqueo
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblIdPedidoAc;
+
+        /// <summary>
+        /// Control lblIdMatPed.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdMatPed;
+
+        /// <summary>
+        /// Control lblCantMatPed.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCantMatPed;
 
         /// <summary>
         /// Control addNuevo.

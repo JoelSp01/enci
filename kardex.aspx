@@ -29,7 +29,7 @@
                 <li class="nav-item"><a class="nav-link text-dark" href="Compras.aspx">Compras</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="pedido.aspx">Pedidos</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="ordenProduccion.aspx">Ordenes</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte<asp:Label ID="lblIdProveedor" runat="server"></asp:Label>
+                <li class="nav-item"><a class="nav-link text-dark" href="reporte.aspx">Reporte<asp:Label ID="lblIdMat" runat="server" Visible="False"></asp:Label>
                 </a></li>
                 <li class="nav-item"><a class="nav-link active text-dark" href="kardex.aspx">Kardex</a></li>
 
@@ -43,24 +43,22 @@
                     <asp:DropDownList ID="listProveedor" runat="server" AutoPostBack="True" Style="width: 100%;" class="form-control" OnSelectedIndexChanged="listProveedor_SelectedIndexChanged">
                     </asp:DropDownList>
                 </div>
-                <div style="width: 30%; display: inline-block">
+                <asp:Panel ID="panelMat" runat="server" Visible="false">
+                    <div style="width: 30%; display: inline-block">
+                        <asp:Label ID="Label3" runat="server" Text="Material"></asp:Label>
+                        <asp:DropDownList ID="listMaterial" runat="server" Style="width: 100%;" class="form-control" AutoPostBack="True" OnSelectedIndexChanged="listMaterial_SelectedIndexChanged"></asp:DropDownList>
+                    </div>
+                </asp:Panel>
 
-                    <asp:Label ID="Label3" runat="server" Text="Fecha desde"></asp:Label>
-                    <asp:TextBox ID="TextBox3" Type="date" runat="server" Style="width: 100%;" class="form-control"></asp:TextBox>
-                </div>
-                <div style="width: 30%; display: inline-block">
-
-                    <asp:Label ID="Label4" runat="server" Text="Fecha hasta"></asp:Label>
-                    <asp:TextBox ID="TextBox4" Type="date" runat="server" Style="width: 100%;" class="form-control"></asp:TextBox>
-                </div>
             </div>
             <br />
-            <div>
-                <label>ENTRADAS</label>
-                <label>SALIDAS</label>
-                <label>SALDOS</label>
-            </div>
-            <asp:Panel ID="Panel1" runat="server">
+
+            <asp:Panel ID="Panel1" runat="server" Visible="false">
+                <div>
+                    <label style="width: 30%;">ENTRADAS</label>
+                    <label style="width: 30%; border-inline: groove">SALIDAS</label>
+                    <label style="width: 30%;">SALDOS</label>
+                </div>
                 <asp:GridView ID="grdKardex" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
 
                     <AlternatingRowStyle BackColor="White" />
@@ -70,7 +68,7 @@
                         <asp:BoundField DataField="proveedor" HeaderText="Proveedor" />
                         <asp:BoundField DataField="material" HeaderText="Material" />
                         <asp:BoundField DataField="cantidad_entrada" HeaderText="Cantidad" />
-                        <asp:BoundField DataField="costo_unitario_e" HeaderText="Costo Unitario" />
+                        <asp:BoundField DataField="costo_unitarioT_e" HeaderText="Costo Unitario" />
                         <asp:BoundField DataField="costo_total_e" HeaderText="Costo Total" />
                         <asp:BoundField DataField="fecha_salida" HeaderText="Fecha Salida" />
                         <asp:BoundField DataField="cantidad_salida" HeaderText="Cantidad" />

@@ -51,7 +51,7 @@ namespace parqueo
                 DateTime dt5 = DateTime.Parse(dsImprimir.Tables[0].Rows[0]["orp_fechaIngreso"].ToString());
                 lblFechaI.Text = dt5.ToString("yyyy-MM-dd");
                 DateTime dt6 = DateTime.Parse(dsImprimir.Tables[0].Rows[0]["orp_fechaFinal"].ToString());
-                lblFechaF.Text = dt5.ToString("yyyy-MM-dd");
+                lblFechaF.Text = dt6.ToString("yyyy-MM-dd");
                 lblCantidad.Text = dsImprimir.Tables[0].Rows[0]["pro_cantidad"].ToString();
                 lblNumPedido.Text = idPedido;
                 lblEspecificacion.Text = especificacion;

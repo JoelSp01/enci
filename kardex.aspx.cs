@@ -31,96 +31,35 @@ namespace parqueo
             try
             {
 
-                //lblIdProveedor.Text = listProveedor.SelectedValue.ToString();
-
                 if (listProveedor.SelectedItem.Text == "[Seleccione]")
                 {
                     string mensaje = "Debe Seleccionar un Proveedor";
-                    
+
                 }
                 else
                 {
-                    if (listProveedor.SelectedItem.Text == "Todos")
+
+                    DataSet data = datos.obtenerMaterialRegistradoProveedor(Int32.Parse(listProveedor.SelectedValue));
+
+                    if (data.Tables[0].Rows.Count > 0)
                     {
-                        lblIdProveedor.Text = "-1";
-                        DataSet obtenerKardex = datos.obtenerKardex(Int32.Parse(lblIdProveedor.Text));
-
-                        if (obtenerKardex.Tables[0].Rows.Count > 0)
-                        {
-                            grdKardex.DataSource = obtenerKardex.Tables[0];
-                            grdKardex.DataBind();
-                        }
-                        else
-                        {
-                            grdKardex.DataSource = "";
-                            grdKardex.DataBind();
-                        }
-
+                        listMaterial.DataSource = data.Tables[0];
+                        listMaterial.DataTextField = "mat_detalle";
+                        listMaterial.DataValueField = "mat_id";
+                        listMaterial.DataBind();
+                        this.listMaterial.Items.Insert(0, "[Seleccione]");
+                        this.listMaterial.Items.Insert(1, "[Todos]");
+                        panelMat.Visible = true;
+                        Panel1.Visible = false;
                     }
-                    else
-                    {
-                        DataSet obtenerKardex = datos.obtenerKardex(Int32.Parse(listProveedor.SelectedValue));
 
-                        if (obtenerKardex.Tables[0].Rows.Count > 0)
-                        {
-                            grdKardex.DataSource = obtenerKardex.Tables[0];
-                            grdKardex.DataBind();
-                        }
-                        else
-                        {
-                            grdKardex.DataSource = "";
-                            grdKardex.DataBind();
-                        }
-
-                    }
                 }
-
-
-                //if (lblIdProveedor.Text != "[Seleccione]")
-                //{
-                //    DataSet dsProveedorId = datos.ObtenerProveedorId(Int32.Parse(lblIdProveedor.Text));
-                //    if (dsProveedorId.Tables[0].Rows.Count > 0)
-                //    {
-                //       // txtRuc.Text = dsProveedorId.Tables[0].Rows[0]["prov_ruc"].ToString();
-                //    }
-                //}
-                //else
-                //{
-                //   // txtRuc.Text = "";
-                //}
-
             }
             catch (Exception)
             {
                 //  MsgBox("alert", "UPS, algo ha pasado por facor revise que los campos esten correctos");
             }
         }
-
-
-
-
-        //        protected void CargarKardex()
-        //        {
-        //            try
-        //            {
-        //                DataSet dsMat = datos.obtenerKardex();
-        //                if (dsMat.Tables[0].Rows.Count > 0)
-        //                {
-        //                    grdMateriales.DataSource = dsMat.Tables[0];
-        //                    grdMateriales.DataBind();
-        //                }
-        //                else
-        //                {
-        //                    grdMateriales.DataSource = "";
-        //                    grdMateriales.DataBind();
-        //                }
-        //            }
-        //            catch (Exception)
-        //            {
-        //    MsgBox("alert", "UPS, algo ha pasado por facor revise que los campos esten correctos");
-        //}
-        //        }
-
 
         public void CargarProveedor()
         {
@@ -135,7 +74,6 @@ namespace parqueo
                     listProveedor.DataValueField = "PROV_ID";
                     listProveedor.DataBind();
                     this.listProveedor.Items.Insert(0, "[Seleccione]");
-                    this.listProveedor.Items.Insert(1, "Todos");
                 }
 
             }
@@ -147,8 +85,61 @@ namespace parqueo
         }
 
 
+        protected void listMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
 
+                if (listMaterial.SelectedItem.Text == "[Seleccione]")
+                {
+                    string mensaje = "Debe Seleccionar un Proveedor";
 
+                }
+                else
+                {
+                    if (listMaterial.SelectedItem.Text == "[Todos]")
+                    {
+                        lblIdMat.Text = "-1";
+                        DataSet obtenerKardex = datos.obtenerKardexMat(Int32.Parse(lblIdMat.Text), Int32.Parse(listProveedor.SelectedValue));
 
+                        if (obtenerKardex.Tables[0].Rows.Count > 0)
+                        {
+                            Panel1.Visible = true;
+                            grdKardex.DataSource = obtenerKardex.Tables[0];
+                            grdKardex.DataBind();
+                        }
+                        else
+                        {
+                            grdKardex.DataSource = "";
+                            grdKardex.DataBind();
+                        }
+
+                    }
+                    else
+                    {
+                        DataSet obtenerKardexMat = datos.obtenerKardexMat(Int32.Parse(listMaterial.SelectedValue),Int32.Parse(listProveedor.SelectedValue));
+
+                        if (obtenerKardexMat.Tables[0].Rows.Count > 0)
+                        {
+                            Panel1.Visible = true;
+                            grdKardex.DataSource = obtenerKardexMat.Tables[0];
+                            grdKardex.DataBind();
+                        }
+                        else
+                        {
+                            grdKardex.DataSource = "";
+                            grdKardex.DataBind();
+                        }
+
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+                //  MsgBox("alert", "UPS, algo ha pasado por facor revise que los campos esten correctos");
+            }
+
+        }
     }
 }

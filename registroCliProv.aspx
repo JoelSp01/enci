@@ -189,7 +189,7 @@
                         <b>
                             <label class="form-label">Material</label></b>
 
-                        <asp:TextBox ID="txtDetMaterial" runat="server" class="form-control" placeholder="Documento de Identidad"></asp:TextBox>
+                        <asp:TextBox ID="txtDetMaterial" runat="server" class="form-control" placeholder="Nombre del Material"></asp:TextBox>
                         <asp:Label ID="lblErrorMat" runat="server" Font-Bold="True" ForeColor="Red" Text="Ingrese un material" Visible="False"></asp:Label>
                         <br />
 
@@ -209,8 +209,8 @@
                             <asp:Label ID="lblMaterialId" runat="server" Text='<%# Bind("mat_id") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField HeaderText="Proveedor" DataField="proveedor" />
                     <asp:BoundField HeaderText="Material" DataField="detalle" />
+                    <asp:BoundField HeaderText="Proveedor" DataField="proveedor" />
                     <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
                     <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
                 </Columns>

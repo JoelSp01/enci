@@ -114,6 +114,11 @@ namespace parqueo
                     grdMat.DataSource = dsMatDatos.Tables[0];
                     grdMat.DataBind();
                 }
+                else
+                {
+
+                    grdMat.Visible = false;
+                }
                 btnGenerarDocumento.Visible = true;
                 lblEspecificaion.Visible = true;
                 txtEspecificaion.Visible = true;
@@ -156,6 +161,7 @@ namespace parqueo
 
 
                     lblErrorEspecificacion.Visible = false;
+                    Session["idProd"] = lblIdProducto.Text;
                     Session["idPedido"] = txtNumPedido.Text;
                     Session["especificacion"] = txtEspecificaion.Text;
                     Response.Redirect("impresion.aspx");
